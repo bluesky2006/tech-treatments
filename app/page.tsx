@@ -1,65 +1,109 @@
-import Image from "next/image";
+import Container from "@/components/Container";
+import ButtonLink from "@/components/ButtonLink";
+import HomeCard from "@/components/HomeCard";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <section className="relative min-h-[calc(100dvh-5rem)] overflow-hidden flex items-center">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/hero2.jpg)" }}
+          aria-hidden="true"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+        {/* Overlay for contrast */}
+        <div className="absolute inset-0 bg-background/75" aria-hidden="true" />
+
+        {/* Content */}
+        <Container>
+          <div className="relative">
+            <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
+              Local computer help
+            </p>
+
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
+              Friendly computer help for everyday people
+            </h1>
+
+            <p className="mt-8 max-w-3xl text-foreground">
+              Repairs, upgrades, restorations and new builds – no jargon, no pressure. Based near
+              Frome, Somerset.
+            </p>
+
+            <div className="mt-12 flex flex-wrap gap-3">
+              <ButtonLink variant="primary" href="/contact">
+                Get in touch
+              </ButtonLink>
+              <ButtonLink href="/services">See services</ButtonLink>
+            </div>
+
+            <p className="mt-8 text-sm text-muted">
+              Not sure what you need? That’s fine – just tell me what’s going wrong.
+            </p>
+          </div>
+        </Container>
+      </section>
+      <section className="pt-10">
+        <Container>
+          <div className="grid gap-4 md:grid-cols-3">
+            <HomeCard
+              title="Fix & speed up"
+              points={[
+                "Slow laptops and PCs",
+                "Startup issues and updates",
+                "Clean-ups and tune-ups",
+              ]}
+              src="/icons/pc-tower.png"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <HomeCard
+              title="Upgrade & build"
+              points={[
+                "SSD and RAM upgrades",
+                "Quiet home office PCs",
+                "Gaming PCs (sensible builds)",
+              ]}
+              src="/icons/tower-pc.png"
+            />
+            <HomeCard
+              title="Restore & recycle"
+              points={[
+                "Retro systems and older machines",
+                "Data transfer (where possible)",
+                "Secure wiping and responsible disposal",
+              ]}
+              src="/icons/computer.png"
+            />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-10">
+        <Container>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-lg font-semibold">How it works</h2>
+              <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-foreground">
+                <li>You describe the problem (message, email, or call).</li>
+                <li>I’ll explain your options and likely costs clearly.</li>
+                <li>I fix it – or tell you honestly if it’s not worth doing.</li>
+              </ol>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-lg font-semibold">Service area</h2>
+              <p className="mt-3 text-sm text-foreground">
+                Frome and nearby villages. Home visits available depending on the job.
+                Workshop-style jobs can be collected and returned.
+              </p>
+              <div className="mt-5">
+                <ButtonLink href="/contact">Ask about availability</ButtonLink>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }

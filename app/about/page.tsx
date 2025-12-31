@@ -1,0 +1,96 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Container from "@/components/Container";
+import ButtonLink from "@/components/ButtonLink";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About Tech Treatments – friendly, plain-English computer help in Frome and nearby villages.",
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <section className="py-16">
+        <Container>
+          <div className="grid gap-10 md:grid-cols-12 md:items-center">
+            {/* Left: copy */}
+            <div className="md:col-span-7">
+              <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
+                About
+              </p>
+
+              <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
+                Calm, practical tech help
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-foreground">
+                Tech Treatments is for people who don’t want to become tech experts – they just want
+                their computer to work properly, without stress or judgement.
+              </p>
+
+              <p className="mt-4 max-w-2xl text-foreground">
+                I’ll explain your options in plain English, avoid upselling, and I’m happy to say
+                when something isn’t worth fixing. As well as everyday repairs and upgrades, I enjoy
+                restoration work – bringing older machines back to life and preserving important
+                files.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <ButtonLink variant="primary" href="/contact">
+                  Get in touch
+                </ButtonLink>
+                <ButtonLink href="/services">View services</ButtonLink>
+              </div>
+
+              <div className="mt-10">
+                <h2 className="text-xl font-semibold tracking-tight">What you can expect</h2>
+                <p className="mt-2 text-muted">
+                  No jargon, no pressure – just sensible help and clear options.
+                </p>
+
+                <ul className="mt-5 grid gap-3 sm:grid-cols-2 text-foreground">
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
+                    <span>Clear advice without jargon</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
+                    <span>Honest guidance on what’s worth fixing</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
+                    <span>Care with your files and your setup</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
+                    <span>Respect for your time and budget</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Right: image */}
+            <div className="md:col-span-5">
+              <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-border bg-card">
+                <Image
+                  src="/profile.png"
+                  alt="Simon from Tech Treatments"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  priority
+                />
+              </div>
+
+              <p className="mt-3 text-sm text-muted">
+                Based near Frome, Somerset – home visits available depending on the job.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
