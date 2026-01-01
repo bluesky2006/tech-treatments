@@ -12,8 +12,8 @@ export default function ButtonLink({ href, children, variant = "default" }: Prop
     <Link
       href={href}
       className={cn(
-        "inline-flex h-11 items-center justify-center rounded-xl border px-4 text-sm font-semibold transition border-border bg-card hover:bg-teal-300 hover:scale-105 hover:text-zinc-900",
-        variant === "primary" && "bg-teal-100 text-zinc-900"
+        "inline-flex h-11 items-center justify-center rounded-xl px-4 text-sm font-semibold transition bg-card hover:scale-105 hover:text-zinc-900",
+        variant === "primary" && "bg-teal-300 text-zinc-900"
       )}
     >
       {children}
