@@ -14,7 +14,7 @@ export default function HomePage() {
         />
 
         {/* Overlay for contrast */}
-        <div className="absolute inset-0 bg-background/75" aria-hidden="true" />
+        <div className="absolute inset-0 bg-background/65" aria-hidden="true" />
 
         {/* Content */}
         <Container>
@@ -39,7 +39,7 @@ export default function HomePage() {
               <ButtonLink href="/services">See services</ButtonLink>
             </div>
 
-            <p className="mt-8 text-sm text-muted">
+            <p className="mt-8 text-sm">
               Not sure what you need? That’s fine – just tell me what’s going wrong.
             </p>
           </div>
@@ -78,32 +78,49 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-
       <section className="py-10">
         <Container>
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-card p-6">
-              <h2 className="text-lg font-semibold">How it works</h2>
-              <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-foreground">
-                <li>You describe the problem (message, email, or call).</li>
-                <li>I’ll explain your options and likely costs clearly.</li>
-                <li>I fix it – or tell you honestly if it’s not worth doing.</li>
-              </ol>
-            </div>
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <div className="grid gap-6 md:grid-cols-2 md:items-stretch">
+              {/* Left: copy */}
+              <div>
+                <h2 className="text-lg font-semibold">Service area</h2>
+                <p className="mt-3 text-sm text-foreground">
+                  Based in Frome but serving most of Somerset. Home visits available depending on
+                  the job. Workshop-style jobs can be collected and returned.
+                </p>
 
-            <div className="rounded-2xl border border-border bg-card p-6">
-              <h2 className="text-lg font-semibold">Service area</h2>
-              <p className="mt-3 text-sm text-foreground">
-                Frome and nearby villages. Home visits available depending on the job.
-                Workshop-style jobs can be collected and returned.
-              </p>
-              <div className="mt-5">
-                <ButtonLink href="/contact">Ask about availability</ButtonLink>
+                <div className="mt-5">
+                  <ButtonLink variant="primary" href="/contact">
+                    Ask about availability
+                  </ButtonLink>
+                </div>
+
+                <p className="mt-4 text-xs text-muted">
+                  Tip: If you’re outside Frome, mention your postcode and I’ll confirm if I can get
+                  to you.
+                </p>
+              </div>
+
+              {/* Right: map */}
+              <div className="overflow-hidden rounded-xl border border-border bg-background">
+                <div className="relative h-64 w-full md:h-full min-h-64">
+                  <iframe
+                    title="Map showing Frome, Somerset"
+                    className="absolute inset-0 h-full w-full grayscale-100 contrast-100"
+                    src="https://www.openstreetmap.org/export/embed.html
+?bbox=-2.65,51.05,-2.05,51.40
+&layer=mapnik
+&marker=51.229,-2.323"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </Container>
-      </section>
+      </section>{" "}
     </>
   );
 }
