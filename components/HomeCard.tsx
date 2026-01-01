@@ -4,12 +4,10 @@ export default function HomeCard({
   title,
   points,
   src,
-  description,
 }: {
   title: string;
   points: string[];
   src: string;
-  description: string;
 }) {
   return (
     <div className="rounded-2xl border border-border bg-card p-5">
