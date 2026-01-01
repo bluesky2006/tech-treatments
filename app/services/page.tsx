@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Container from "@/components/Container";
 import ServiceCard from "@/components/ServiceCard";
 import ButtonLink from "@/components/ButtonLink";
@@ -13,40 +12,80 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      {/* Hero */}
       <section className="py-16">
         <Container>
-          <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
-            Services
-          </p>
+          <div className="grid gap-10 md:grid-cols-12 md:items-start">
+            {/* Left: intro */}
+            <div className="md:col-span-7">
+              <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
+                Services
+              </p>
 
-          <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
-            What I can help with
-          </h1>
+              <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
+                What I can help with
+              </h1>
 
-          <p className="mt-8 max-w-2xl text-foreground">
-            Simple, practical help – focused on getting you back up and running. If you’re unsure
-            what you need, just describe what’s happening and I’ll guide you through the options.
-          </p>
+              <p className="mt-8 max-w-2xl text-foreground">
+                Simple, practical help – focused on getting you back up and running. If you’re
+                unsure what you need, just describe what’s happening and I’ll guide you through the
+                options.
+              </p>
 
-          <div className="mt-12 flex flex-wrap gap-3">
-            <ButtonLink variant="primary" href="/contact">
-              Get in touch
-            </ButtonLink>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <ButtonLink variant="primary" href="/contact">
+                  Get in touch
+                </ButtonLink>
+              </div>
+
+              <p className="mt-6 text-sm text-muted">
+                Based near Frome, Somerset – home visits available depending on the job.
+              </p>
+            </div>
+
+            {/* Right: costs */}
+            <div className="md:col-span-5 md:mt-10">
+              <div className="rounded-3xl border border-border bg-card p-6">
+                <h2 className="text-xl font-semibold tracking-tight">What it typically costs</h2>
+                <p className="mt-3 text-foreground">
+                  I’ll always explain options and likely costs before doing any work.
+                </p>
+
+                <ul className="mt-4 space-y-1 text-foreground">
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
+                    <span>Home visits: priced by job / time depending on what’s needed</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
+                    <span>Upgrades: labour + parts (with clear choices)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
+                    <span>Restoration work: quoted per project</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
+                    <span>E-waste collection: typically free depending on location / size</span>
+                  </li>
+                </ul>
+
+                <p className="mt-5 font-semibold text-foreground">
+                  If something isn’t worth fixing, I’ll tell you.
+                </p>
+              </div>
+            </div>
           </div>
-
-          <p className="mt-8 text-sm text-muted">
-            Based near Frome, Somerset – home visits available depending on the job.
-          </p>
         </Container>
       </section>
 
-      <section className="py-10">
+      {/* Cards (unchanged) */}
+      <section className="pb-10">
         <Container>
           <div className="grid gap-4 md:grid-cols-2">
             <ServiceCard
               title="Computer help & repairs"
-              description="Help with everyday computer problems – slow performance, crashes, startup issues, and things that just aren’t behaving as they should. I’ll look for the simplest, most sensible fix and explain what’s going on in plain English.
-"
+              description="Help with everyday computer problems – slow performance, crashes, startup issues, and things that just aren’t behaving as they should. I’ll look for the simplest, most sensible fix and explain what’s going on in plain English."
               points={[
                 "Slow computers, crashes, startup issues",
                 "Software problems, updates and cleanup",
@@ -79,7 +118,7 @@ export default function ServicesPage() {
             />
             <ServiceCard
               title="Retro & restoration"
-              description="Careful restoration of older computers and systems, from reviving machines that no longer start to making vintage setups usable again. I can also put together bespoke emulation machines based on the games, platforms, or time period you care about – ideal for revisiting old favourites without the hassle."
+              description="Careful restoration of older computers and systems, from reviving machines that no longer start to making vintage setups usable again. I can also put together bespoke emulation machines – ideal for revisiting old gaming favourites without the hassle."
               points={[
                 "Bringing older machines back to life",
                 "Modern storage options where appropriate",
@@ -90,47 +129,15 @@ export default function ServicesPage() {
             />
             <ServiceCard
               title="Responsible disposal"
-              description="Safe and responsible handling of old computers you no longer need. This includes secure data wiping where required, reuse or refurbishment when possible, and proper recycling when it isn’t.
-"
+              description="Safe and responsible handling of old computers you no longer need. This includes secure data wiping where required, reuse or refurbishment when possible, and proper recycling when it isn’t."
               points={[
                 "Secure data wiping (on request)",
-                "Reuse / refurb where possible",
-                "Responsible recycling otherwise",
+                "Reuse / refurb where possible - responsible recycling otherwise ",
                 "Collection may be available depending on location",
+                "Free service (subject to terms)",
               ]}
               src="/ewaste.jpg"
             />
-            <div className="rounded-2xl border border-border bg-card overflow-hidden">
-              <div className="relative h-40 w-full">
-                <Image
-                  src=""
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-base font-semibold">What it typically costs</h3>
-                <p className="mt-3 text-foreground">
-                  I’ll always explain options and likely costs before doing any work.
-                </p>
-                <ul className="mt-3 list-disc space-y-1 pl-5 text-foreground">
-                  <li>Home visits: priced by job / time depending on what’s needed</li>
-                  <li>Upgrades: labour + parts (with clear choices)</li>
-                  <li>Restoration work: quoted per project</li>
-                </ul>
-                <p className="mt-3 text-teal-400">
-                  If something isn’t worth fixing, I’ll tell you.
-                </p>
-
-                <div className="mt-5">
-                  <ButtonLink variant="primary" href="/contact">
-                    Describe your issue
-                  </ButtonLink>
-                </div>
-              </div>
-            </div>
           </div>
         </Container>
       </section>
