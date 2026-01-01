@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <section className="py-16">
         <Container>
-          <div className="grid gap-10 md:grid-cols-12 md:items-center">
+          <div className="grid gap-10 md:grid-cols-12 md:items-start">
             {/* Left: copy */}
             <div className="md:col-span-7">
               <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
@@ -36,21 +36,12 @@ export default function AboutPage() {
                 restoration work – bringing older machines back to life and preserving important
                 files.
               </p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                <ButtonLink variant="primary" href="/contact">
-                  Get in touch
-                </ButtonLink>
-                <ButtonLink href="/services">View services</ButtonLink>
-              </div>
-
               <div className="mt-10">
                 <h2 className="text-xl font-semibold tracking-tight">What you can expect</h2>
-                <p className="mt-2 text-muted">
+                <p className="mt-2">
                   No jargon, no pressure – just sensible help and clear options.
                 </p>
-
-                <ul className="mt-5 grid gap-3 sm:grid-cols-2 text-foreground">
+                <ul className="mt-5 grid gap-1 sm:grid-cols-2 text-foreground">
                   <li className="flex gap-3">
                     <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
                     <span>Clear advice without jargon</span>
@@ -68,14 +59,20 @@ export default function AboutPage() {
                     <span>Respect for your time and budget</span>
                   </li>
                 </ul>
+
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <ButtonLink variant="primary" href="/contact">
+                    Get in touch
+                  </ButtonLink>
+                </div>
               </div>
             </div>
 
             {/* Right: image */}
-            <div className="md:col-span-5">
-              <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-border bg-card">
+            <div className="md:col-span-5 md:mt-10">
+              <div className="relative aspect-4/5 w-full overflow-hidden rounded-3xl border border-border bg-card">
                 <Image
-                  src="/profile.png"
+                  src="/profile2.jpeg"
                   alt="Simon from Tech Treatments"
                   fill
                   className="object-cover"
