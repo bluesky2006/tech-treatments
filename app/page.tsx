@@ -5,17 +5,15 @@ import HomeCard from "@/components/HomeCard";
 export default function HomePage() {
   return (
     <>
-      <section className="relative min-h-[calc(100dvh-5rem)] overflow-hidden flex items-center">
+      <section className="relative -mt-20 min-h-dvh overflow-hidden flex items-center pt-20">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url(/hero2.jpg)" }}
           aria-hidden="true"
         />
-
         {/* Overlay for contrast */}
-        <div className="absolute inset-0 bg-background/65" aria-hidden="true" />
-
+        <div className="absolute inset-0 bg-zinc-900/55" aria-hidden="true" />
         {/* Content */}
         <Container>
           <div className="relative">
@@ -23,11 +21,11 @@ export default function HomePage() {
               Local computer help
             </p>
 
-            <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl text-zinc-100">
               Friendly computer help for everyday people
             </h1>
 
-            <p className="mt-8 max-w-3xl text-foreground">
+            <p className="mt-8 max-w-3xl text-zinc-100">
               Repairs, upgrades, restorations and new builds – no jargon, no pressure. Based near
               Frome, Somerset.
             </p>
@@ -39,7 +37,7 @@ export default function HomePage() {
               <ButtonLink href="/services">See services</ButtonLink>
             </div>
 
-            <p className="mt-8 text-sm">
+            <p className="mt-8 text-sm text-zinc-100/90">
               Not sure what you need? That’s fine – just tell me what’s going wrong.
             </p>
           </div>
