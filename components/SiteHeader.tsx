@@ -35,8 +35,7 @@ export default function SiteHeader() {
   );
 
   const linkClass = cn(
-    "rounded-xl px-3 py-2 transition-colors",
-    isHome ? "hover:bg-teal-400 hover:text-zinc-900" : "hover:bg-teal-400 hover:text-zinc-900"
+    "rounded-xl px-3 py-2 transition-colors hover:bg-teal-400 hover:text-zinc-900 dark:hover:text-zinc-900"
   );
 
   return (
