@@ -60,15 +60,14 @@ export default function HomePage() {
               points={[
                 "SSD and RAM upgrades",
                 "Quiet home office PCs",
-                "Gaming PCs (sensible builds)",
+                "Gaming PCs / Workstations",
               ]}
               src="/icons/tower-pc.png"
             />
             <HomeCard
               title="Restore & recycle"
               points={[
-                "Retro systems and older machines",
-                "Data transfer (where possible)",
+                "Older machines and retro systems",
                 "Secure wiping and responsible disposal",
               ]}
               src="/icons/computer.png"
@@ -94,7 +93,7 @@ export default function HomePage() {
                   </ButtonLink>
                 </div>
 
-                <p className="mt-4 text-xs text-muted">
+                <p className="mt-24 text-xs text-muted">
                   Tip: If you’re outside Frome, mention your postcode and I’ll confirm if I can get
                   to you.
                 </p>
@@ -118,7 +117,7 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-      </section>{" "}
+      </section>
     </>
   );
 }
