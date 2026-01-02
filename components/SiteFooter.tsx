@@ -2,7 +2,7 @@ import Container from "./Container";
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-border py-8 text-sm text-muted">
+    <footer className="py-8 text-sm text-muted">
       <Container>
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Tech Treatments. Frome, Somerset.</p>
