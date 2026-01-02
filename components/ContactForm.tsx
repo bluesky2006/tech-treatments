@@ -20,7 +20,7 @@ export default function ContactForm() {
 
           if (res.ok) {
             formRef.current?.reset();
-            setStatus({ ok: true, message: "Thanks — message sent. I’ll get back to you soon." });
+            setStatus({ ok: true, message: "Thanks – message sent. I’ll get back to you soon." });
           } else {
             setStatus({ ok: false, message: res.error ?? "Something went wrong." });
           }
