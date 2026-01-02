@@ -47,7 +47,7 @@ export default function ServicesPage() {
             {/* Right: costs */}
             <div className="md:col-span-5 md:mt-10">
               <div className="rounded-3xl border border-border bg-card p-6">
-                <h2 className="text-xl font-semibold tracking-tight">What it typically costs</h2>
+                <h2 className="text-xl font-semibold tracking-tight">What about cost?</h2>
                 <p className="mt-3 text-foreground">
                   I’ll always explain options and likely costs before doing any work.
                 </p>
