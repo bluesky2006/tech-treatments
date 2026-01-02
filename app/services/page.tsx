@@ -39,7 +39,7 @@ export default function ServicesPage() {
                 </ButtonLink>
               </div>
 
-              <p className="text-sm text-muted mt-24">
+              <p className="mt-24 text-sm text-muted">
                 Based near Frome, Somerset – home visits available depending on the job.
               </p>
             </div>
@@ -61,6 +61,7 @@ export default function ServicesPage() {
                   ]}
                   className="mt-4 space-y-1"
                 />
+
                 <p className="mt-5 font-semibold text-foreground">
                   If something isn’t worth fixing, I’ll tell you.
                 </p>
@@ -70,21 +71,22 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Cards (unchanged) */}
+      {/* Cards */}
       <section className="pb-10">
         <Container>
           <div className="grid gap-4 md:grid-cols-2">
             <ServiceCard
               title="Computer help & repairs"
-              description="Help with everyday computer problems – slow performance, crashes, startup issues, and things that just aren’t behaving as they should. I’ll look for the simplest, most sensible fix and explain what’s going on in plain English."
+              description="Help when something isn’t working properly – slow performance, crashes, startup problems, and software that won’t behave. I’ll look for the simplest sensible fix and explain what’s going on in plain English."
               points={[
                 "Slow computers, crashes, startup issues",
-                "Software problems, updates and cleanup",
-                "Mac, PC or Linux",
-                "Basic printer / Wi-Fi issues (home setups)",
+                "Errors, pop-ups and software problems",
+                "Overheating, noisy fans and hardware faults",
+                "Basic printer / Wi-Fi issues",
               ]}
               src="/bsod.jpg"
             />
+
             <ServiceCard
               title="Upgrades"
               description="Practical upgrades that make a real difference, especially for older machines. I’ll advise honestly on what’s worth doing – and just as importantly, what isn’t – so you don’t spend money unnecessarily."
@@ -92,10 +94,11 @@ export default function ServicesPage() {
                 "SSD upgrades (often the biggest speed boost)",
                 "RAM upgrades (when worthwhile)",
                 "Health checks and tune-ups",
-                "Honest advice on what’s worth spending money on",
+                "Advice on what’s worth upgrading",
               ]}
               src="/upgrades.jpg"
             />
+
             <ServiceCard
               title="New & custom PCs"
               description="Computers built around how you actually use them – whether that’s home office work, creative projects, or gaming. I’ll help you choose sensible components, build the machine, and set everything up so it’s ready to use."
@@ -105,27 +108,41 @@ export default function ServicesPage() {
                 "Workstations for creative projects",
                 "Data transfer from your old computer",
               ]}
-              src="/build.jpg"
+              src="/gaming.jpg"
             />
+
+            <ServiceCard
+              title="Setup & everyday support"
+              description="Help with day-to-day computer tasks and setups that feel fiddly or confusing. From getting a new laptop ready to sorting email, printers, or backups, I’ll make sure everything works smoothly and is easy to use."
+              points={[
+                "New computer setup and handover",
+                "Email, accounts and password help",
+                "Printers, scanners and home Wi-Fi setup",
+                "Backups and keeping things tidy",
+              ]}
+              src="/update.jpg"
+            />
+
             <ServiceCard
               title="Retro & restoration"
-              description="Careful restoration of older computers and systems, from reviving machines that no longer start to making vintage setups usable again. I can also put together bespoke emulation machines – ideal for revisiting old gaming favourites without the hassle."
+              description="Careful restoration of older computers and systems – from reviving machines that no longer start to making vintage setups usable again. I can also put together bespoke emulation machines, tailored to the games you love."
               points={[
                 "Bringing older machines back to life",
-                "Modern storage options where appropriate",
+                "Storage upgrades that suit the era",
                 "File retrieval (case-by-case, where possible)",
-                "Tailored emulation setups based on your interests",
+                "Tailored emulation machines for classic games",
               ]}
               src="/retro.jpg"
             />
+
             <ServiceCard
               title="Responsible disposal"
               description="Safe and responsible handling of old computers you no longer need. This includes secure data wiping where required, reuse or refurbishment when possible, and proper recycling when it isn’t."
               points={[
                 "Secure data wiping (on request)",
-                "Reuse / refurb where possible - responsible recycling otherwise ",
-                "Collection may be available depending on location",
-                "Free service (subject to terms)",
+                "Reuse / refurb where possible – recycle otherwise",
+                "Collection available depending on location / volume",
+                "Confirmation once it’s been handled",
               ]}
               src="/ewaste.jpg"
             />
