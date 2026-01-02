@@ -16,27 +16,24 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-zinc-900/55" aria-hidden="true" />
         {/* Content */}
         <Container>
-          <div className="relative">
+          <div className="relative -mt-16 md:-mt-24">
+            {" "}
             <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
               Local computer help
             </p>
-
             <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl text-zinc-100">
               Friendly computer help for everyday people
             </h1>
-
             <p className="mt-8 max-w-3xl text-zinc-100">
               Repairs, upgrades, restorations and new builds – no jargon, no pressure. Based near
               Frome, Somerset.
             </p>
-
             <div className="mt-12 flex flex-wrap gap-3">
               <ButtonLink variant="primary" href="/contact">
                 Get in touch
               </ButtonLink>
               <ButtonLink href="/services">See services</ButtonLink>
             </div>
-
             <p className="mt-8 text-sm text-zinc-100/90">
               Not sure what you need? That’s fine – just tell me what’s going wrong.
             </p>
