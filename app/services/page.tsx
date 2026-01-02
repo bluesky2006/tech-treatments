@@ -38,7 +38,7 @@ export default function ServicesPage() {
                 </ButtonLink>
               </div>
 
-              <p className="mt-6 text-sm text-muted">
+              <p className="text-sm text-muted mt-24">
                 Based near Frome, Somerset – home visits available depending on the job.
               </p>
             </div>
@@ -89,10 +89,10 @@ export default function ServicesPage() {
               points={[
                 "Slow computers, crashes, startup issues",
                 "Software problems, updates and cleanup",
-                "Overheating and noisy fans",
+                "Mac, PC or Linux",
                 "Basic printer / Wi-Fi issues (home setups)",
               ]}
-              src="/repairs.jpg"
+              src="/bsod.jpg"
             />
             <ServiceCard
               title="Upgrades"
@@ -111,7 +111,7 @@ export default function ServicesPage() {
               points={[
                 "Quiet home office machines (reliable and tidy)",
                 "Gaming PCs (budget-aware, explainable choices)",
-                "Full setup: accounts, backups, updates, printer",
+                "Workstations for creative projects",
                 "Data transfer from your old computer",
               ]}
               src="/build.jpg"
