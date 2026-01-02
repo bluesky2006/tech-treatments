@@ -27,14 +27,14 @@ export default function AboutPage() {
 
               <p className="mt-6 max-w-2xl text-foreground">
                 Tech Treatments is for people who don’t want to become tech experts – they just want
-                their computer to work properly, without stress or judgement.
+                their computer to work properly.
               </p>
 
               <p className="mt-4 max-w-2xl text-foreground">
                 I’ll explain your options in plain English, avoid upselling, and I’m happy to say
                 when something isn’t worth fixing. As well as everyday repairs and upgrades, I enjoy
-                restoration work – bringing older machines back to life and preserving important
-                files.
+                restoration work – bringing older machines back to life and saving machines from
+                landfill.
               </p>
               <div className="mt-10">
                 <h2 className="text-xl font-semibold tracking-tight">What you can expect</h2>
@@ -65,6 +65,9 @@ export default function AboutPage() {
                     Get in touch
                   </ButtonLink>
                 </div>
+                <p className="mt-14 text-sm text-muted">
+                  Based near Frome, Somerset – home visits available depending on the job.
+                </p>
               </div>
             </div>
 
@@ -72,7 +75,7 @@ export default function AboutPage() {
             <div className="md:col-span-5 md:mt-10">
               <div className="relative aspect-4/5 w-full overflow-hidden rounded-3xl border border-border bg-card">
                 <Image
-                  src="/profile2.jpeg"
+                  src="/profile.jpeg"
                   alt="Simon from Tech Treatments"
                   fill
                   className="object-cover"
@@ -80,10 +83,6 @@ export default function AboutPage() {
                   priority
                 />
               </div>
-
-              <p className="mt-3 text-sm text-muted">
-                Based near Frome, Somerset – home visits available depending on the job.
-              </p>
             </div>
           </div>
         </Container>
