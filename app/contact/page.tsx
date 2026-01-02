@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
-import ButtonLink from "@/components/ButtonLink";
 import ContactForm from "@/components/ContactForm";
+import BulletList from "@/components/BulletList";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -31,36 +31,15 @@ export default function ContactPage() {
               <div className="mt-8">
                 <div className="mt-6">
                   <h3 className="text-base font-semibold">Helpful details to include</h3>
-                  <ul className="mt-4 space-y-1 text-foreground">
-                    <li className="flex gap-3">
-                      <span
-                        className="mt-2 h-2 w-2 rounded-full bg-teal-400/70"
-                        aria-hidden="true"
-                      />
-                      <span>What device it is (PC, laptop, Mac)</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span
-                        className="mt-2 h-2 w-2 rounded-full bg-teal-400/70"
-                        aria-hidden="true"
-                      />
-                      <span>What you mainly use it for</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span
-                        className="mt-2 h-2 w-2 rounded-full bg-teal-400/70"
-                        aria-hidden="true"
-                      />
-                      <span>Roughly how old it is</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span
-                        className="mt-2 h-2 w-2 rounded-full bg-teal-400/70"
-                        aria-hidden="true"
-                      />
-                      <span>Any error message (a photo is fine)</span>
-                    </li>
-                  </ul>
+                  <BulletList
+                    items={[
+                      "What device it is (PC, laptop, Mac)",
+                      "What you mainly use it for",
+                      "Roughly how old it is",
+                      "Any error message (a photo is fine)",
+                    ]}
+                    className="mt-4 space-y-1"
+                  />{" "}
                 </div>
                 <h2 className="text-xl font-semibold tracking-tight mt-12">Quick contact</h2>
 

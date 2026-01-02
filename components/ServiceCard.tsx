@@ -1,6 +1,7 @@
 import Image from "next/image";
+import BulletList from "./BulletList";
 
-export default function HomeCard({
+export default function ServiceCard({
   title,
   points,
   src,
@@ -26,14 +27,7 @@ export default function HomeCard({
       <div className="p-5">
         <h3 className="text-xl font-semibold">{title}</h3>
         <p className="mt-3 text-foreground">{description}</p>
-        <ul className="mt-4 space-y-1 text-foreground">
-          {points.map((p) => (
-            <li key={p} className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-              <span>{p}</span>
-            </li>
-          ))}
-        </ul>
+        <BulletList items={points} className="mt-4" />
       </div>
     </div>
   );

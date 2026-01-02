@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import ServiceCard from "@/components/ServiceCard";
 import ButtonLink from "@/components/ButtonLink";
+import BulletList from "@/components/BulletList";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -51,25 +52,15 @@ export default function ServicesPage() {
                   I’ll always explain options and likely costs before doing any work.
                 </p>
 
-                <ul className="mt-4 space-y-1 text-foreground">
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-                    <span>Home visits: priced by job / time depending on what’s needed</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-                    <span>Upgrades: labour + parts (with clear choices)</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-                    <span>Restoration work: quoted per project</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-                    <span>E-waste collection: typically free depending on location / size</span>
-                  </li>
-                </ul>
-
+                <BulletList
+                  items={[
+                    "Home visits: priced by job / time depending on what’s needed",
+                    "Upgrades: labour + parts (with clear choices)",
+                    "Restoration work: quoted per project",
+                    "E-waste collection: typically free depending on location / size",
+                  ]}
+                  className="mt-4 space-y-1"
+                />
                 <p className="mt-5 font-semibold text-foreground">
                   If something isn’t worth fixing, I’ll tell you.
                 </p>

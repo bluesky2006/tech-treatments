@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
+import BulletList from "@/components/BulletList";
 
 export const metadata: Metadata = {
   title: "About",
@@ -41,25 +42,17 @@ export default function AboutPage() {
                 <p className="mt-2">
                   No jargon, no pressure – just sensible help and clear options.
                 </p>
-                <ul className="mt-5 grid gap-1 sm:grid-cols-2 text-foreground">
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-                    <span>Clear advice without jargon</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-                    <span>Honest guidance on what’s worth fixing</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-                    <span>Care with your files and your setup</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-teal-400/70" aria-hidden="true" />
-                    <span>Respect for your time and budget</span>
-                  </li>
-                </ul>
-
+                <div className="mt-5 grid gap-1 sm:grid-cols-2">
+                  <BulletList
+                    items={[
+                      "Clear advice without jargon",
+                      "Honest guidance on what’s worth fixing",
+                      "Care with your files and your setup",
+                      "Respect for your time and budget",
+                    ]}
+                    className="space-y-1"
+                  />
+                </div>{" "}
                 <div className="mt-7 flex flex-wrap gap-3">
                   <ButtonLink variant="primary" href="/contact">
                     Get in touch
