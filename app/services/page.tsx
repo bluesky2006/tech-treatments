@@ -1,23 +1,28 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useMemo, useState } from "react";
 import Container from "@/components/Container";
-import ServiceCard from "@/components/ServiceCard";
 import ButtonLink from "@/components/ButtonLink";
 import BulletList from "@/components/BulletList";
-
-export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Repairs, upgrades, restorations, custom builds, and responsible computer disposal in Frome and nearby villages.",
-};
+import ServiceModal from "@/components/ServiceModal";
+import ServiceCardGrid from "@/components/ServiceCardGrid";
+import { services as SERVICES, type ServiceKey } from "@/lib/services";
 
 export default function ServicesPage() {
+  const services = useMemo(() => SERVICES, []);
+  const [openKey, setOpenKey] = useState<ServiceKey | null>(null);
+
+  const activeService = useMemo(
+    () => services.find((s) => s.key === openKey) ?? null,
+    [openKey, services]
+  );
+
   return (
     <>
       {/* Hero */}
       <section className="py-16">
         <Container>
           <div className="grid gap-10 md:grid-cols-12 md:items-start">
-            {/* Left: intro */}
             <div className="md:col-span-7">
               <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
                 Services
@@ -44,7 +49,6 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            {/* Right: costs */}
             <div className="md:col-span-5 md:mt-10">
               <div className="rounded-3xl border border-border bg-card p-6">
                 <h2 className="text-xl font-semibold tracking-tight">What about cost?</h2>
@@ -74,81 +78,15 @@ export default function ServicesPage() {
       {/* Cards */}
       <section className="pb-10">
         <Container>
-          <div className="grid gap-4 md:grid-cols-2">
-            <ServiceCard
-              title="Computer help & repairs"
-              description="Help when something isn’t working properly – slow performance, crashes, startup problems, and software that won’t behave. I’ll look for the simplest sensible fix and explain what’s going on in plain English."
-              points={[
-                "Slow computers, crashes, startup issues",
-                "Errors, pop-ups and software problems",
-                "Overheating, noisy fans and hardware faults",
-                "Basic printer / Wi-Fi issues",
-              ]}
-              src="/bsod.jpg"
-            />
-
-            <ServiceCard
-              title="Upgrades"
-              description="Practical upgrades that make a real difference, especially for older machines. I’ll advise honestly on what’s worth doing – and just as importantly, what isn’t – so you don’t spend money unnecessarily."
-              points={[
-                "SSD upgrades (often the biggest speed boost)",
-                "RAM upgrades (when worthwhile)",
-                "Health checks and tune-ups",
-                "Advice on what’s worth upgrading",
-              ]}
-              src="/upgrades.jpg"
-            />
-
-            <ServiceCard
-              title="New & custom PCs"
-              description="Computers built around how you actually use them – whether that’s home office work, creative projects, or gaming. I’ll help you choose sensible components, build the machine, and set everything up so it’s ready to use."
-              points={[
-                "Quiet home office machines (reliable and tidy)",
-                "Gaming PCs (budget-aware, explainable choices)",
-                "Workstations for creative projects",
-                "Data transfer from your old computer",
-              ]}
-              src="/gaming.jpg"
-            />
-
-            <ServiceCard
-              title="Setup & everyday support"
-              description="Help with day-to-day computer tasks and setups that feel fiddly or confusing. From getting a new laptop ready to sorting email, printers, or backups, I’ll make sure everything works smoothly and is easy to use."
-              points={[
-                "New computer setup and handover",
-                "Email, accounts and password help",
-                "Printers, scanners and home Wi-Fi setup",
-                "Backups and keeping things tidy",
-              ]}
-              src="/update.jpg"
-            />
-
-            <ServiceCard
-              title="Retro & restoration"
-              description="Careful restoration of older computers and systems – from reviving machines that no longer start to making vintage setups usable again. I can also put together bespoke emulation machines, tailored to the games you love."
-              points={[
-                "Bringing older machines back to life",
-                "Storage upgrades that suit the era",
-                "File retrieval (case-by-case, where possible)",
-                "Tailored emulation machines for classic games",
-              ]}
-              src="/retro.jpg"
-            />
-
-            <ServiceCard
-              title="Responsible disposal"
-              description="Safe and responsible handling of old computers you no longer need. This includes secure data wiping where required, reuse or refurbishment when possible, and proper recycling when it isn’t."
-              points={[
-                "Secure data wiping (on request)",
-                "Reuse / refurb where possible – recycle otherwise",
-                "Collection available depending on location / volume",
-                "Confirmation once it’s been handled",
-              ]}
-              src="/ewaste.jpg"
-            />
-          </div>
+          <ServiceCardGrid services={services} onOpen={setOpenKey} />
         </Container>
       </section>
+
+      <ServiceModal
+        open={openKey !== null}
+        onClose={() => setOpenKey(null)}
+        service={activeService}
+      />
     </>
   );
 }
