@@ -52,7 +52,7 @@ export default function AboutPage() {
                     ]}
                     className="space-y-1"
                   />
-                </div>{" "}
+                </div>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <ButtonLink variant="primary" href="/contact">
                     Get in touch
