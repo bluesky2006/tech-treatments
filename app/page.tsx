@@ -18,7 +18,6 @@ export default function HomePage() {
         {/* Content */}
         <Container>
           <div className="relative -mt-16 md:-mt-24">
-            {" "}
             <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
               Local computer help
             </p>
