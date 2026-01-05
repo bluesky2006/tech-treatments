@@ -39,7 +39,7 @@ export default function ContactPage() {
                       "Any error message (a photo is fine)",
                     ]}
                     className="mt-4 space-y-1"
-                  />{" "}
+                  />
                 </div>
                 <h2 className="text-xl font-semibold tracking-tight mt-12">Quick contact</h2>
 
