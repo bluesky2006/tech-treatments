@@ -23,7 +23,7 @@ export default function ServiceCardGrid({
             title={service.title}
             description={service.cardDescription}
             points={service.cardPoints}
-            src={service.cardImageSrc}
+            src={service.imageSrc}
           />
         </button>
       ))}
