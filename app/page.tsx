@@ -22,7 +22,7 @@ export default function HomePage() {
               Local computer help
             </p>
             <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl text-zinc-100">
-              Friendly computer help for everyday people
+              Friendly computer help in the Somerset area
             </h1>
             <p className="mt-8 max-w-3xl text-zinc-100">
               Repairs, upgrades, restorations and new builds – no jargon, no pressure. Based near
@@ -142,7 +142,7 @@ export default function HomePage() {
                 },
                 {
                   q: "How much does it usually cost?",
-                  a: "It depends on the job, but I’ll always explain costs before doing any work. Simple fixes are often inexpensive, and upgrades are priced clearly as labour plus parts.",
+                  a: "It depends on the job, but I’ll always explain costs before doing any work. Simple fixes are often inexpensive and upgrades are priced clearly as labour plus parts.",
                 },
                 {
                   q: "Do you offer remote support?",
@@ -150,7 +150,7 @@ export default function HomePage() {
                 },
                 {
                   q: "Can you help me with my business set-up?",
-                  a: "I can assist with setting up new systems, networks, and software for small businesses – just get in touch to discuss your needs.",
+                  a: "I can assist with setting up new systems, networks and software for small businesses – just get in touch to discuss your needs.",
                 },
                 {
                   q: "How long does a typical job take?",

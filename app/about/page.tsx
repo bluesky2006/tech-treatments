@@ -32,7 +32,7 @@ export default function AboutPage() {
               </p>
 
               <p className="mt-4 max-w-2xl text-foreground">
-                I’ll explain your options in plain English, avoid upselling, and I’m happy to say
+                I’ll explain your options in plain English, avoid upselling and I’m happy to say
                 when something isn’t worth fixing. As well as everyday repairs and upgrades, I enjoy
                 restoration work – bringing older machines back to life and saving machines from
                 landfill.

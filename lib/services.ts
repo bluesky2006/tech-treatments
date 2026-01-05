@@ -5,7 +5,7 @@ export type ServiceData = {
   title: string;
   cardDescription: string;
   cardPoints: string[];
-  cardImageSrc: string;
+  imageSrc: string;
 
   intro: string;
   whatYouGet: string[];
@@ -18,14 +18,14 @@ export const services: ServiceData[] = [
     key: "repairs",
     title: "Computer help & repairs",
     cardDescription:
-      "Help when something isn’t working properly – slow performance, crashes, startup problems, and software that won’t behave. I’ll look for the simplest sensible fix and explain what’s going on in plain English.",
+      "Help when something isn’t working properly – slow performance, crashes, startup problems and software that won’t behave. I’ll look for the simplest sensible fix and explain what’s going on in plain English.",
     cardPoints: [
       "Slow computers, crashes, startup issues",
       "Errors, pop-ups and software problems",
       "Overheating, noisy fans and hardware faults",
       "Basic printer / Wi-Fi issues",
     ],
-    cardImageSrc: "/bsod.jpg",
+    imageSrc: "/bsod.jpg",
     intro:
       "Tidy, practical troubleshooting for everyday problems – with clear explanations and sensible next steps.",
     whatYouGet: [
@@ -57,7 +57,7 @@ export const services: ServiceData[] = [
       "Health checks and tune-ups",
       "Advice on what’s worth upgrading",
     ],
-    cardImageSrc: "/upgrades.jpg",
+    imageSrc: "/upgrades.jpg",
     intro:
       "Upgrades that genuinely improve the experience – with honest advice on what’s worth doing.",
     whatYouGet: [
@@ -69,6 +69,7 @@ export const services: ServiceData[] = [
     typicalJobs: [
       "SSD upgrades (biggest improvement for older machines)",
       "RAM upgrades (only when it’ll help)",
+      "CPU and GPU upgrades (case-by-case)",
       "General tune-up and clean-up",
       "Thermal paste / fan clean (case-by-case)",
     ],
@@ -79,14 +80,14 @@ export const services: ServiceData[] = [
     key: "custom",
     title: "New & custom PCs",
     cardDescription:
-      "Computers built around how you actually use them – whether that’s home office work, creative projects, or gaming. I’ll help you choose sensible components, build the machine, and set everything up so it’s ready to use.",
+      "Computers built around how you actually use them – whether that’s home office work, creative projects, or gaming. I’ll help you choose sensible components, build the machine and set everything up so it’s ready to use.",
     cardPoints: [
       "Quiet home office machines (reliable and tidy)",
       "Gaming PCs (budget-aware, explainable choices)",
       "Workstations for creative projects",
       "Data transfer from your old computer",
     ],
-    cardImageSrc: "/gaming.jpg",
+    imageSrc: "/gaming.jpg",
     intro:
       "A build that matches how you actually use your computer – no nonsense components, no overspending.",
     whatYouGet: [
@@ -96,8 +97,8 @@ export const services: ServiceData[] = [
       "Data transfer from your old machine (if needed)",
     ],
     typicalJobs: [
-      "Home office machines that stay quiet",
-      "Gaming PCs with explainable choices",
+      "Home office machines (quiet, reliable, tidy)",
+      "Gaming PCs with explainable choices (budget-aware)",
       "Creative workstations (photo/video/music)",
       "Small form factor builds (where suitable)",
     ],
@@ -114,20 +115,21 @@ export const services: ServiceData[] = [
       "Printers, scanners and home Wi-Fi setup",
       "Backups and keeping things tidy",
     ],
-    cardImageSrc: "/update.jpg",
+    imageSrc: "/update.jpg",
     intro:
-      "Help with the fiddly stuff – accounts, printers, backups, and new-computer setup without the stress.",
+      "Help with the fiddly stuff – accounts, printers, backups and new-computer setup without the stress.",
     whatYouGet: [
       "Calm, patient setup help",
       "Less clutter, fewer pop-ups, fewer surprises",
+      "Bloat-free, streamlined setups",
       "Backups set up properly",
       "Simple handover so you know what’s what",
     ],
     typicalJobs: [
-      "New laptop setup and “make it feel right”",
+      "New computer setup and “make it feel right”",
       "Email, accounts and password help",
       "Printers/scanners and home Wi-Fi setup",
-      "Backups + basic security checks",
+      "Backups and basic security checks",
     ],
   },
 
@@ -135,27 +137,32 @@ export const services: ServiceData[] = [
     key: "retro",
     title: "Retro & restoration",
     cardDescription:
-      "Careful restoration of older computers and systems – from reviving machines that no longer start to making vintage setups usable again. I can also put together bespoke emulation machines, tailored to the games you love.",
+      "Sympathetic restoration and setup of older computers and systems – focusing on getting vintage machines usable again without invasive electronics work. I can also put together bespoke emulation machines, tailored to the games you love.",
     cardPoints: [
-      "Bringing older machines back to life",
+      "Bringing older machines back to a usable state",
       "Storage upgrades that suit the era",
       "File retrieval (case-by-case, where possible)",
       "Tailored emulation machines for classic games",
     ],
-    cardImageSrc: "/retro.jpg",
+    imageSrc: "/retro.jpg",
     intro:
-      "Careful, respectful restoration of vintage machines – plus tailored emulation builds for classic games.",
+      "Careful, respectful work with vintage computers – concentrating on diagnosis, configuration, and era-appropriate improvements.",
     whatYouGet: [
-      "Gentle fault-finding and revival work",
-      "Era-appropriate upgrades where sensible",
+      "Assessment of condition and likely causes of faults",
+      "Upgrades and replacements where appropriate",
       "Advice on preservation vs practicality",
-      "Optional modern conveniences (carefully added)",
+      "Optional modern conveniences added sensitively",
     ],
     typicalJobs: [
-      "Machines that no longer boot",
-      "Storage upgrades that suit the era",
-      "File retrieval (case-by-case)",
-      "Bespoke emulation machines",
+      "Machines that no longer boot or behave unpredictably",
+      "Storage replacements or upgrades appropriate to the system",
+      "Data and file recovery (case-by-case)",
+      "Restoration of appearance where possible",
+      "Basic cleaning and maintenance",
+      "Custom emulation builds for classic games (RetroPie, etc.)",
+    ],
+    goodToKnow: [
+      "This service does not include invasive electronics work (e.g. capacitor replacement, board repair, etc.).",
     ],
   },
 
@@ -163,14 +170,14 @@ export const services: ServiceData[] = [
     key: "disposal",
     title: "Responsible disposal",
     cardDescription:
-      "Safe and responsible handling of old computers you no longer need. This includes secure data wiping where required, reuse or refurbishment when possible, and proper recycling when it isn’t.",
+      "Safe and responsible handling of old computers you no longer need. This includes secure data wiping where required, reuse or refurbishment when possible and proper recycling when it isn’t.",
     cardPoints: [
       "Secure data wiping (on request)",
       "Reuse / refurb where possible – recycle otherwise",
       "Collection available depending on location / volume",
       "Confirmation once it’s been handled",
     ],
-    cardImageSrc: "/ewaste.jpg",
+    imageSrc: "/ewaste.jpg",
     intro: "Safe and responsible handling of old computers – with secure wiping where required.",
     whatYouGet: [
       "Secure wipe on request (where possible)",

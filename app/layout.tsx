@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s – Tech Treatments",
   },
   description:
-    "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds, and responsible disposal. Frome and nearby villages.",
+    "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds and responsible disposal. Frome and nearby villages.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
