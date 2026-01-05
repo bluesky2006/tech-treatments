@@ -54,7 +54,7 @@ export default function ServiceModal({
         {/* Image header */}
         <div className="relative h-56 w-full">
           <Image
-            src={service.cardImageSrc}
+            src={service.imageSrc}
             alt=""
             fill
             className="object-cover"
@@ -62,7 +62,7 @@ export default function ServiceModal({
             priority
           />
           {/* Optional subtle overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent" />
         </div>
 
         {/* Content */}
@@ -74,21 +74,16 @@ export default function ServiceModal({
             </div>
 
             {/* Improved close button */}
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label="Close modal"
-              className="
-                flex h-10 w-10 items-center justify-center
-                rounded-full border border-border
-                text-lg leading-none text-muted
-                transition
-                hover:bg-muted hover:text-foreground
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400/60
-              "
-            >
-              ×
-            </button>
+            <div className="absolute right-4 top-4 z-10">
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close modal"
+                className="flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-muted transition"
+              >
+                ×
+              </button>
+            </div>
           </div>
 
           <div className="mt-6 grid gap-6 md:grid-cols-2">
