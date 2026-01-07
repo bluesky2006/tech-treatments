@@ -7,8 +7,8 @@ export default function SiteFooter() {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Tech Treatments. Frome, Somerset.</p>
           <p className="flex flex-wrap gap-2">
-            <a className="hover:text-zinc-100" href="mailto:techtreatments@gmail.com">
-              techtreatments@gmail.com
+            <a className="hover:text-zinc-100" href="mailto:hello@techtreatments.co.uk">
+              hello@techtreatments.co.uk
             </a>
           </p>
         </div>

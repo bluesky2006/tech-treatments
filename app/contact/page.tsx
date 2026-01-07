@@ -47,9 +47,9 @@ export default function ContactPage() {
                   Email:{" "}
                   <a
                     className="underline decoration-border underline-offset-4 hover:text-foreground/80"
-                    href="mailto:techtreatments@gmail.com"
+                    href="mailto:hello@techtreatments.co.uk"
                   >
-                    techtreatments@gmail.com
+                    hello@techtreatments.co.uk
                   </a>
                 </p>
                 <p className="mt-12 text-sm text-muted">
