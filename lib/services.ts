@@ -1,4 +1,4 @@
-export type ServiceKey = "repairs" | "upgrades" | "custom" | "support" | "retro" | "disposal";
+export type ServiceKey = "help" | "upgrades" | "custom" | "retro";
 
 export type ServiceData = {
   key: ServiceKey;
@@ -11,186 +11,133 @@ export type ServiceData = {
   whatYouGet: string[];
   typicalJobs: string[];
   goodToKnow?: string[];
+  pricingHint?: string;
 };
 
 export const services: ServiceData[] = [
   {
-    key: "repairs",
-    title: "Computer help & repairs",
+    key: "help",
+    title: "Computer Help & Repairs",
     cardDescription:
-      "Help when something isn’t working properly – slow performance, crashes, startup problems and software that won’t behave. I’ll look for the simplest sensible fix and explain what’s going on in plain English.",
+      "Help when something isn’t working properly – slow performance, crashes, startup problems, printers or Wi-Fi that won’t behave. I focus on calm troubleshooting and clear explanations in plain English.",
     cardPoints: [
-      "Slow computers, crashes, startup issues",
+      "Slow computers, crashes and startup issues",
       "Errors, pop-ups and software problems",
-      "Overheating, noisy fans and hardware faults",
-      "Basic printer / Wi-Fi issues",
+      "Printers, Wi-Fi and everyday setup issues",
+      "Honest advice if it’s not worth fixing",
     ],
     imageSrc: "/bsod.jpg",
     intro:
-      "Tidy, practical troubleshooting for everyday problems – with clear explanations and sensible next steps.",
+      "Practical help for everyday computer problems – with clear explanations and sensible next steps.",
     whatYouGet: [
       "A quick assessment of what’s actually wrong",
       "The simplest sensible fix first",
       "Clear explanation in plain English",
-      "Advice if it’s not worth the spend",
+      "Advice if repair isn’t worthwhile",
     ],
     typicalJobs: [
-      "Slow performance, freezing, crashes",
-      "Startup issues and annoying errors",
-      "Overheating, noisy fans, random shutdowns",
-      "Basic printer / Wi-Fi issues",
+      "Slow performance, freezing or crashes",
+      "Startup issues and confusing error messages",
+      "Printers, scanners and home Wi-Fi problems",
+      "New computer setup and handover",
+      "Email, accounts and password help",
+      "Backups and basic security checks",
     ],
     goodToKnow: [
-      "If parts are needed, I’ll share options and prices before ordering.",
       "Home visits available depending on the job.",
+      "If parts are needed, options and prices are agreed first.",
     ],
+    pricingHint: "From £30 for a fixed-price assessment",
   },
 
   {
     key: "upgrades",
-    title: "Upgrades",
+    title: "Upgrades & Performance Improvements",
     cardDescription:
-      "Practical upgrades that make a real difference, especially for older machines. I’ll advise honestly on what’s worth doing – and just as importantly, what isn’t – so you don’t spend money unnecessarily.",
+      "Targeted upgrades that genuinely improve how your computer feels to use. I’ll advise honestly on what’s worth doing – and just as importantly, what isn’t – so you don’t spend money unnecessarily.",
     cardPoints: [
       "SSD upgrades (often the biggest speed boost)",
-      "RAM upgrades (when worthwhile)",
-      "Health checks and tune-ups",
-      "Advice on what’s worth upgrading",
+      "RAM upgrades where they actually help",
+      "Health checks, clean-ups and tune-ups",
+      "Straight advice on value vs cost",
     ],
     imageSrc: "/upgrades.jpg",
-    intro:
-      "Upgrades that genuinely improve the experience – with honest advice on what’s worth doing.",
+    intro: "Upgrades that make a real difference – without overspending or unnecessary parts.",
     whatYouGet: [
-      "A quick health check to confirm the best upgrade path",
-      "Clear part options (budget vs best value)",
-      "A noticeable speed boost where possible",
-      "Better stability and reduced “weirdness”",
+      "A health check to confirm the best upgrade path",
+      "Clear options (budget vs best value)",
+      "Noticeable speed and stability improvements",
+      "Quieter, cooler machines where possible",
     ],
     typicalJobs: [
-      "SSD upgrades (biggest improvement for older machines)",
-      "RAM upgrades (only when it’ll help)",
-      "CPU and GPU upgrades (case-by-case)",
-      "General tune-up and clean-up",
-      "Thermal paste / fan clean (case-by-case)",
+      "SSD upgrades for older laptops and desktops",
+      "RAM upgrades (when worthwhile)",
+      "General system clean-ups and tune-ups",
+      "Fan cleaning and thermal paste (case-by-case)",
     ],
-    goodToKnow: ["I’ll always confirm compatibility before you buy anything."],
+    goodToKnow: ["Compatibility is always confirmed before you buy anything."],
+    pricingHint: "Labour from £40 + parts (quoted in advance)",
   },
 
   {
     key: "custom",
-    title: "New & custom PCs",
+    title: "New & Custom Computers",
     cardDescription:
-      "Computers built around how you actually use them – whether that’s home office work, creative projects, or gaming. I’ll help you choose sensible components, build the machine and set everything up so it’s ready to use.",
+      "Computers built around how you actually use them – whether that’s home office work, creative projects or gaming. Sensible component choices, tidy builds and no unnecessary extras.",
     cardPoints: [
-      "Quiet home office machines (reliable and tidy)",
-      "Gaming PCs (budget-aware, explainable choices)",
-      "Workstations for creative projects",
+      "Quiet home office PCs",
+      "Gaming PCs with explainable choices",
+      "Creative workstations",
       "Data transfer from your old computer",
     ],
     imageSrc: "/gaming.jpg",
-    intro:
-      "A build that matches how you actually use your computer – no nonsense components, no overspending.",
+    intro: "A computer that fits how you work or play – not a generic spec sheet.",
     whatYouGet: [
-      "Parts list tailored to your budget and needs",
+      "Parts list tailored to your needs and budget",
       "Quiet, tidy build with sensible airflow",
       "Setup so it’s ready to use",
-      "Data transfer from your old machine (if needed)",
+      "Optional data transfer from your old machine",
     ],
     typicalJobs: [
-      "Home office machines (quiet, reliable, tidy)",
-      "Gaming PCs with explainable choices (budget-aware)",
-      "Creative workstations (photo/video/music)",
-      "Small form factor builds (where suitable)",
+      "Home office machines (quiet and reliable)",
+      "Gaming PCs with clear budget trade-offs",
+      "Creative workstations (photo, video, music)",
+      "Small form-factor builds where appropriate",
     ],
-  },
-
-  {
-    key: "support",
-    title: "Setup & everyday support",
-    cardDescription:
-      "Help with day-to-day computer tasks and setups that feel fiddly or confusing. From getting a new laptop ready to sorting email, printers, or backups, I’ll make sure everything works smoothly and is easy to use.",
-    cardPoints: [
-      "New computer setup and handover",
-      "Email, accounts and password help",
-      "Printers, scanners and home Wi-Fi setup",
-      "Backups and keeping things tidy",
-    ],
-    imageSrc: "/update.jpg",
-    intro:
-      "Help with the fiddly stuff – accounts, printers, backups and new-computer setup without the stress.",
-    whatYouGet: [
-      "Calm, patient setup help",
-      "Less clutter, fewer pop-ups, fewer surprises",
-      "Bloat-free, streamlined setups",
-      "Backups set up properly",
-      "Simple handover so you know what’s what",
-    ],
-    typicalJobs: [
-      "New computer setup and “make it feel right”",
-      "Email, accounts and password help",
-      "Printers/scanners and home Wi-Fi setup",
-      "Backups and basic security checks",
-    ],
+    pricingHint: "Build fee agreed upfront based on complexity",
   },
 
   {
     key: "retro",
-    title: "Retro & restoration",
+    title: "Retro, Reuse & Responsible Disposal",
     cardDescription:
-      "Sympathetic restoration and setup of older computers and systems – focusing on getting vintage machines usable again without invasive electronics work. I can also put together bespoke emulation machines, tailored to the games you love.",
+      "Careful handling of older and end-of-life computers – from sympathetic retro restoration to secure data wiping and responsible recycling. Focused on preservation, reuse and honesty.",
     cardPoints: [
-      "Bringing older machines back to a usable state",
-      "Storage upgrades that suit the era",
-      "File retrieval (case-by-case, where possible)",
-      "Tailored emulation machines for classic games",
+      "Retro computers and vintage systems",
+      "Era-appropriate storage upgrades",
+      "Secure data wiping where required",
+      "Reuse, refurbish or recycle responsibly",
     ],
     imageSrc: "/retro.jpg",
     intro:
-      "Careful, respectful work with vintage computers – concentrating on diagnosis, configuration, and era-appropriate improvements.",
+      "Respectful work with older machines – balancing preservation, practicality and sustainability.",
     whatYouGet: [
-      "Assessment of condition and likely causes of faults",
-      "Upgrades and replacements where appropriate",
-      "Advice on preservation vs practicality",
-      "Optional modern conveniences added sensitively",
+      "Assessment of condition and realistic options",
+      "Sensitive upgrades where appropriate",
+      "Advice on preserve vs replace decisions",
+      "Secure handling of data when disposing",
     ],
     typicalJobs: [
-      "Machines that no longer boot or behave unpredictably",
-      "Storage replacements or upgrades appropriate to the system",
-      "Data and file recovery (case-by-case)",
-      "Restoration of appearance where possible",
-      "Basic cleaning and maintenance",
-      "Custom emulation builds for classic games (RetroPie, etc.)",
+      "Vintage machines that no longer boot",
+      "Storage replacements suited to the era",
+      "File and data recovery (case-by-case)",
+      "Custom emulation machines for classic games",
+      "Old laptops and desktops needing secure disposal",
     ],
     goodToKnow: [
-      "This service does not include invasive electronics work (e.g. capacitor replacement, board repair, etc.).",
+      "No invasive electronics repair (board-level or capacitor work).",
+      "Collection often free depending on location and volume.",
     ],
-  },
-
-  {
-    key: "disposal",
-    title: "Responsible disposal",
-    cardDescription:
-      "Safe and responsible handling of old computers you no longer need. This includes secure data wiping where required, reuse or refurbishment when possible and proper recycling when it isn’t.",
-    cardPoints: [
-      "Secure data wiping (on request)",
-      "Reuse / refurb where possible – recycle otherwise",
-      "Collection available depending on location / volume",
-      "Confirmation once it’s been handled",
-    ],
-    imageSrc: "/ewaste.jpg",
-    intro: "Safe and responsible handling of old computers – with secure wiping where required.",
-    whatYouGet: [
-      "Secure wipe on request (where possible)",
-      "Reuse/refurbish where it makes sense",
-      "Proper recycling when it doesn’t",
-      "Confirmation once handled",
-    ],
-    typicalJobs: [
-      "Old laptops/desktops you want gone",
-      "Business clear-outs (small scale)",
-      "Devices with sensitive data",
-      "Mixed e-waste collections (case-by-case)",
-    ],
-    goodToKnow: ["Collection is usually free depending on location/volume."],
+    pricingHint: "Assessment usually free – work quoted after inspection",
   },
 ];
