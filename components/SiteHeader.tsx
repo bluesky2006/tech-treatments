@@ -62,11 +62,6 @@ export default function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on route change (no lint disable, no unnecessary re-render)
-  useEffect(() => {
-    setMenuOpen((prev) => (prev ? false : prev));
-  }, [pathname]);
-
   // Escape key + scroll lock
   useEffect(() => {
     if (!menuOpen) return;
@@ -86,7 +81,7 @@ export default function SiteHeader() {
   }, [menuOpen]);
 
   const headerClass = cn(
-    "sticky top-0 z-20 transition-colors duration-300",
+    "fixed top-0 left-0 right-0 z-50 transition-colors duration-300",
     isHome
       ? scrolled
         ? "bg-zinc-900/80 backdrop-blur-md"
