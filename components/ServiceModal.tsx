@@ -50,7 +50,7 @@ export default function ServiceModal({
       />
 
       {/* Panel */}
-      <div className="relative mx-4 w-full max-w-2xl overflow-hidden rounded-3xl bg-card shadow-2xl">
+      <div className="relative mx-4 w-full max-w-3xl overflow-hidden rounded-3xl bg-card shadow-2xl">
         {/* Image header */}
         <div className="relative h-56 w-full">
           <Image
