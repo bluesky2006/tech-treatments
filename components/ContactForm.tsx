@@ -67,7 +67,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex h-11 w-full items-center justify-center rounded-xl border border-teal-200/30 bg-teal-300 px-4 text-sm font-semibold text-zinc-900 transition hover:scale-101 disabled:opacity-60 cursor-pointer"
+        className="inline-flex h-11 w-full items-center justify-center rounded-xl border border-teal-200/30 bg-teal-300 px-4 text-sm font-semibold text-zinc-900 transition hover:scale-101 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {isPending ? "Sending…" : "Send"}
       </button>
