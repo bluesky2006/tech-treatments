@@ -42,34 +42,44 @@ export default function HomePage() {
       </section>
       <section className="pt-10">
         <Container>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <HomeCard
-              title="Fix & speed up"
+              title="Help & repairs"
               points={[
                 "Slow laptops and PCs",
-                "Startup issues and updates",
-                "Clean-ups and tune-ups",
+                "Crashes, errors and odd behaviour",
+                "Printers, Wi-Fi and setup help",
               ]}
               src="/icons/pc-tower.png"
             />
             <HomeCard
-              title="Upgrade & build"
+              title="Upgrades"
               points={[
                 "SSD and RAM upgrades",
-                "Quiet home office PCs",
-                "Gaming PCs / Workstations",
+                "Tune-ups and health checks",
+                "Cooler, quieter machines (case-by-case)",
+              ]}
+              src="/icons/cpu.png"
+            />
+            <HomeCard
+              title="New & custom PCs"
+              points={[
+                "Quiet home office builds",
+                "Gaming PCs (budget-aware)",
+                "Creative workstations",
               ]}
               src="/icons/tower-pc.png"
             />
             <HomeCard
-              title="Restore & recycle"
+              title="Retro & disposal"
               points={[
-                "Older machines and retro systems",
-                "Secure wiping and responsible disposal",
+                "Retro machines and restoration",
+                "Emulation builds",
+                "Secure wiping and recycling",
               ]}
               src="/icons/computer.png"
             />
-          </div>
+          </div>{" "}
         </Container>
       </section>
       <section className="py-4">
