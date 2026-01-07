@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
-import BulletList from "@/components/BulletList";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -11,11 +10,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="py-16">
+      <section className="pb-16 pt-32">
         <Container>
           <div className="grid gap-10 md:grid-cols-12 md:items-start">
             {/* Left: intro + quick contact */}
-            <div className="md:col-span-7">
+            <div className="md:col-span-7 flex flex-col">
               <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
                 Contact
               </p>
@@ -29,18 +28,6 @@ export default function ContactPage() {
                 as soon as I can.
               </p>
               <div className="mt-8">
-                <div className="mt-6">
-                  <h3 className="text-base font-semibold">Helpful details to include</h3>
-                  <BulletList
-                    items={[
-                      "What device it is (PC, laptop, Mac)",
-                      "What you mainly use it for",
-                      "Roughly how old it is",
-                      "Any error message (a photo is fine)",
-                    ]}
-                    className="mt-4 space-y-1"
-                  />
-                </div>
                 <h2 className="text-xl font-semibold tracking-tight mt-12">Quick contact</h2>
 
                 <p className="mt-3 text-foreground">
