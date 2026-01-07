@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="py-16">
+      <section className="pb-16 pt-32">
         <Container>
           <div className="grid gap-10 md:grid-cols-12 md:items-start">
             {/* Left: copy */}
@@ -66,16 +66,22 @@ export default function AboutPage() {
 
             {/* Right: image */}
             <div className="md:col-span-5 md:mt-10">
-              <div className="relative aspect-4/5 w-full overflow-hidden rounded-3xl border border-border bg-card">
-                <Image
-                  src="/profile.jpeg"
-                  alt="Simon from Tech Treatments"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                  priority
-                />
-              </div>
+              <figure>
+                <div className="relative aspect-4/5 w-full overflow-hidden rounded-3xl border border-border bg-card">
+                  <Image
+                    src="/profile.jpeg"
+                    alt="Simon Busby from Tech Treatments"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                    priority
+                  />
+                </div>
+
+                <figcaption className="mt-3 text-sm text-muted">
+                  Simon Busby, Tech Treatments
+                </figcaption>
+              </figure>
             </div>
           </div>
         </Container>

@@ -20,7 +20,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16">
+      <section className="pb-16 pt-32">
         <Container>
           <div className="grid gap-10 md:grid-cols-12 md:items-start">
             <div className="md:col-span-7">
