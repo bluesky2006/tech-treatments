@@ -79,7 +79,7 @@ export default function ServiceModal({
                 type="button"
                 onClick={onClose}
                 aria-label="Close modal"
-                className="flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-muted transition"
+                className="flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-muted hover:text-teal-400 transition"
               >
                 ×
               </button>
