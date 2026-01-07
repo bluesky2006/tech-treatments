@@ -14,7 +14,7 @@ export default function HomePage() {
           aria-hidden="true"
         />
         {/* Overlay for contrast */}
-        <div className="absolute inset-0 bg-zinc-900/55" aria-hidden="true" />
+        <div className="absolute inset-0 bg-zinc-900/75" aria-hidden="true" />
         {/* Content */}
         <Container>
           <div className="relative -mt-16 md:-mt-24">
