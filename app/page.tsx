@@ -6,11 +6,11 @@ import FAQSection from "@/components/FAQSection";
 export default function HomePage() {
   return (
     <>
-      <section className="relative -mt-20 min-h-dvh overflow-hidden flex items-center pt-20">
+      <section className="relative min-h-dvh overflow-hidden flex items-center">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/hero2.jpg)" }}
+          style={{ backgroundImage: "url(/hero.jpg)" }}
           aria-hidden="true"
         />
         {/* Overlay for contrast */}
