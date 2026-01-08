@@ -14,7 +14,7 @@ function isServiceKey(value: string | null): value is ServiceKey {
 }
 
 export default function ServicesPage() {
-  const services = useMemo(() => SERVICES, []);
+  const services = SERVICES;
   const [openKey, setOpenKey] = useState<ServiceKey | null>(null);
 
   const searchParams = useSearchParams();
@@ -81,10 +81,10 @@ export default function ServicesPage() {
 
                 <BulletList
                   items={[
-                    "Home visits: priced by job / time depending on what’s needed",
-                    "Upgrades: labour + parts (with clear choices)",
-                    "Restoration work: quoted per project",
-                    "E-waste collection: typically free depending on location / size",
+                    "You only pay for work carried out",
+                    "Parts are quoted in advance before ordering",
+                    "New/custom builds: fee agreed upfront after a quick chat",
+                    "E-waste collection is typically free (depending on location/size)",
                   ]}
                   className="mt-4 space-y-1"
                 />
