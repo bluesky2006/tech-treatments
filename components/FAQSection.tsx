@@ -39,35 +39,33 @@ export default function FAQSection({
             const buttonId = `${sectionId}-button-${i}`;
 
             return (
-              <div
+              <button
                 key={`${item.q}-${i}`}
+                id={buttonId}
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                onClick={() => setOpenIndex(isOpen ? null : i)}
                 className={cn(
-                  "rounded-2xl border border-border bg-background p-5 transition",
+                  "w-full text-left rounded-2xl border border-border bg-background p-5 transition cursor-pointer",
+                  "hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-200/10 focus:border-teal-200/30",
                   isOpen && "shadow-sm"
                 )}
               >
-                <button
-                  id={buttonId}
-                  type="button"
-                  className="flex w-full items-center justify-between gap-4 text-left"
-                  aria-expanded={isOpen}
-                  aria-controls={panelId}
-                  onClick={() => setOpenIndex(isOpen ? null : i)}
-                >
-                  <div className="flex gap-3 items-center">
-                    <span className="text-sm font-semibold text-foreground">{item.q}</span>
-                  </div>
+                <div className="flex w-full items-center justify-between gap-4">
+                  <span className="text-sm font-semibold text-foreground">{item.q}</span>
 
                   <span
                     className={cn(
-                      "shrink-0 inline-flex h-5 w-5 items-center justify-center text-sm font-semibold text-teal-400 transition",
+                      "pointer-events-none inline-flex h-5 w-5 items-center justify-center text-sm font-semibold text-teal-400 transition",
                       isOpen && "text-foreground"
                     )}
                     aria-hidden="true"
                   >
                     {isOpen ? "–" : "+"}
                   </span>
-                </button>
+                </div>
+
                 <div
                   id={panelId}
                   role="region"
@@ -78,12 +76,12 @@ export default function FAQSection({
                   )}
                 >
                   <div className="overflow-hidden">
-                    <div className={cn("text-sm text-foreground pb-0")}>{item.a}</div>
+                    <div className="text-sm text-foreground">{item.a}</div>
                   </div>
-                </div>{" "}
-              </div>
+                </div>
+              </button>
             );
-          })}
+          })}{" "}
         </div>
       </div>
     </section>
