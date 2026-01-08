@@ -57,7 +57,7 @@ export default function ContactForm() {
         </label>
 
         <select
-          className="mt-2 w-full rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-teal-200/30 focus:ring-2 focus:ring-teal-200/10"
+          className="mt-2 w-full rounded-xl border border-border bg-card px-2 py-2 text-sm text-foreground outline-none focus:border-teal-200/30 focus:ring-2 focus:ring-teal-200/10"
           name="service"
           defaultValue=""
           required
