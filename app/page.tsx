@@ -1,13 +1,10 @@
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import HomeCard from "@/components/HomeCard";
-// import Testimonials from "@/components/Testimonials";
 import ServiceArea from "@/components/ServiceArea";
-// import { testimonials } from "@/lib/testimonials";
 import { homeCards } from "@/lib/homeCards";
-import { homeFaqs } from "@/lib/homeFaqs";
-
-const FAQ_TEASER_COUNT = 4;
+// import Testimonials from "@/components/Testimonials";
+// import { testimonials } from "@/lib/testimonials";
 
 export default function HomePage() {
   return (
