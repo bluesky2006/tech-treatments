@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import { cn } from "@/lib/cn";
 
-type FAQItem = {
+export type FAQItem = {
   q: string;
   a: React.ReactNode;
 };
@@ -12,46 +12,55 @@ export default function FAQSection({
   title = "FAQ",
   intro,
   items,
-  className,
 }: {
   title?: string;
   intro?: string;
   items: FAQItem[];
-  className?: string;
 }) {
   const sectionId = useId();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className={cn("py-4", className)} aria-labelledby={sectionId}>
+    <section aria-labelledby={sectionId}>
       <div className="rounded-3xl border border-border bg-card p-6">
-        <div className="max-w-2xl">
-          <h2 id={sectionId} className="text-xl font-semibold tracking-tight">
-            {title}
-          </h2>
-          {intro && <p className="mt-2 text-sm text-muted">{intro}</p>}
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-2xl">
+            <h2 id={sectionId} className="text-xl font-semibold tracking-tight">
+              {title}
+            </h2>
+            {intro && <p className="mt-2 text-sm text-muted">{intro}</p>}
+          </div>
         </div>
 
-        <div className="mt-6 divide-y divide-border">
+        <div className="mt-6 grid gap-3 md:grid-cols-2">
           {items.map((item, i) => {
             const isOpen = openIndex === i;
             const panelId = `${sectionId}-panel-${i}`;
             const buttonId = `${sectionId}-button-${i}`;
 
             return (
-              <div key={`${item.q}-${i}`} className="py-3">
+              <div
+                key={`${item.q}-${i}`}
+                className={cn(
+                  "rounded-2xl border border-border bg-background p-5 transition",
+                  isOpen && "shadow-sm"
+                )}
+              >
                 <button
                   id={buttonId}
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 py-2 text-left"
+                  className="flex w-full items-center justify-between gap-4 text-left"
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                 >
-                  <span className="text-base font-semibold text-foreground">{item.q}</span>
+                  <div className="flex gap-3 items-center">
+                    <span className="text-sm font-semibold text-foreground">{item.q}</span>
+                  </div>
+
                   <span
                     className={cn(
-                      "shrink-0 rounded-full px-2 text-large transition text-teal-400 font-medium",
+                      "shrink-0 inline-flex h-5 w-5 items-center justify-center text-sm font-semibold text-teal-400 transition",
                       isOpen && "text-foreground"
                     )}
                     aria-hidden="true"
@@ -59,20 +68,19 @@ export default function FAQSection({
                     {isOpen ? "–" : "+"}
                   </span>
                 </button>
-
                 <div
                   id={panelId}
                   role="region"
                   aria-labelledby={buttonId}
                   className={cn(
-                    "grid transition-[grid-template-rows] duration-300 ease-out",
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    "grid min-h-0 transition-[grid-template-rows] duration-300 ease-out",
+                    isOpen ? "mt-3 grid-rows-[1fr]" : "mt-0 grid-rows-[0fr]"
                   )}
                 >
                   <div className="overflow-hidden">
-                    <div className="pb-2 pt-1 text-sm text-foreground">{item.a}</div>
+                    <div className={cn("text-sm text-foreground pb-0")}>{item.a}</div>
                   </div>
-                </div>
+                </div>{" "}
               </div>
             );
           })}
