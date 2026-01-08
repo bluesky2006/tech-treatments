@@ -24,8 +24,8 @@ export default function ContactPage() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-foreground">
-                Tell me what’s going wrong and what you’re hoping to achieve. I’ll get back to you
-                as soon as I can.
+                Select the type of help you need and tell me what’s going wrong. I’ll get back to
+                you as soon as I can.
               </p>
               <div className="mt-8">
                 <h2 className="text-xl font-semibold tracking-tight mt-12">Quick contact</h2>

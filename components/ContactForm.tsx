@@ -51,7 +51,27 @@ export default function ContactForm() {
           required
         />
       </div>
+      <div>
+        <label className="block text-xs font-medium tracking-wide text-muted uppercase">
+          Service needed
+        </label>
 
+        <select
+          className="mt-2 w-full rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-teal-200/30 focus:ring-2 focus:ring-teal-200/10"
+          name="service"
+          defaultValue=""
+          required
+        >
+          <option value="" disabled>
+            Select a service…
+          </option>
+          <option value="help">Help & repairs</option>
+          <option value="upgrades">Upgrades</option>
+          <option value="custom">New & custom PCs</option>
+          <option value="retro">Retro & disposal</option>
+          <option value="not_sure">Not sure</option>
+        </select>
+      </div>
       <div>
         <label className="block text-xs font-medium tracking-wide text-muted uppercase">
           What’s going on?
