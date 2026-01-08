@@ -11,6 +11,7 @@ import Container from "./Container";
 const NAV_ITEMS = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
