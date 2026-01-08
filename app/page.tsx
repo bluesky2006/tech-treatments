@@ -22,7 +22,7 @@ export default function HomePage() {
               Local computer help
             </p>
             <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl text-zinc-100">
-              Friendly computer help in the Somerset area
+              Friendly computer help in the Somerset&nbsp;area
             </h1>
             <p className="mt-8 max-w-3xl text-zinc-100">
               Repairs, upgrades, restorations and new builds – no jargon, no pressure. Based near
@@ -51,6 +51,7 @@ export default function HomePage() {
                 "Printers, Wi-Fi and setup help",
               ]}
               src="/icons/pc-tower.png"
+              href="/services?service=help"
             />
             <HomeCard
               title="Upgrades"
@@ -60,6 +61,7 @@ export default function HomePage() {
                 "Cooler, quieter machines (case-by-case)",
               ]}
               src="/icons/cpu.png"
+              href="/services?service=upgrades"
             />
             <HomeCard
               title="New & custom PCs"
@@ -69,6 +71,7 @@ export default function HomePage() {
                 "Creative workstations",
               ]}
               src="/icons/tower-pc.png"
+              href="/services?service=custom"
             />
             <HomeCard
               title="Retro & disposal"
@@ -78,8 +81,9 @@ export default function HomePage() {
                 "Secure wiping and recycling",
               ]}
               src="/icons/computer.png"
+              href="/services?service=retro"
             />
-          </div>{" "}
+          </div>
         </Container>
       </section>
       <section className="py-4">
