@@ -47,7 +47,6 @@ export const services: ServiceData[] = [
       "Home visits available depending on the job.",
       "If parts are needed, options and prices are agreed first.",
     ],
-    pricingHint: "From £30 for a fixed-price assessment",
   },
 
   {
@@ -76,7 +75,6 @@ export const services: ServiceData[] = [
       "Fan cleaning and thermal paste (case-by-case)",
     ],
     goodToKnow: ["Compatibility is always confirmed before you buy anything."],
-    pricingHint: "Labour from £40 + parts (quoted in advance)",
   },
 
   {
@@ -104,7 +102,6 @@ export const services: ServiceData[] = [
       "Creative workstations (photo, video, music)",
       "Small form-factor builds where appropriate",
     ],
-    pricingHint: "Build fee agreed upfront based on complexity",
   },
 
   {
@@ -135,9 +132,8 @@ export const services: ServiceData[] = [
       "Old laptops and desktops needing secure disposal",
     ],
     goodToKnow: [
-      "No invasive electronics repair (board-level or capacitor work).",
+      "Note: I do not perform invasive electronics repair (board-level or capacitor work).",
       "Collection often free depending on location and volume.",
     ],
-    pricingHint: "Assessment usually free – work quoted after inspection",
   },
 ];
