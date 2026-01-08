@@ -55,6 +55,11 @@ export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  function isActivePath(href: string, pathname: string) {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  }
+
   // Scroll → blur
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -95,8 +100,7 @@ export default function SiteHeader() {
     isHome ? "text-zinc-100" : "text-zinc-900 dark:text-zinc-100"
   );
 
-  const linkClass =
-    "rounded-xl px-3 py-2 transition-colors hover:bg-teal-400 hover:text-zinc-900 dark:hover:text-zinc-900";
+  const linkClass = "relative rounded-xl px-3 py-2 transition-colors hover:text-teal-400";
 
   const iconBtnClass = cn(
     "md:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 transition-colors",
@@ -114,11 +118,38 @@ export default function SiteHeader() {
 
             {/* Desktop nav */}
             <nav className={navTextClass} aria-label="Primary">
-              {NAV_ITEMS.map((item) => (
-                <Link key={item.href} className={linkClass} href={item.href}>
-                  {item.label}
-                </Link>
-              ))}
+              {NAV_ITEMS.map((item) => {
+                const active = isActivePath(item.href, pathname);
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      linkClass,
+                      active
+                        ? isHome
+                          ? "text-zinc-100"
+                          : "text-zinc-900 dark:text-zinc-100"
+                        : isHome
+                        ? "text-zinc-100/90"
+                        : "text-zinc-900/80 dark:text-zinc-100/80"
+                    )}
+                  >
+                    {item.label}
+
+                    {/* underline */}
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        "absolute left-3 right-3 bottom-0 h-0.5 rounded-full transition-opacity bg-teal-400/70",
+                        active ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Mobile toggle */}
@@ -174,16 +205,26 @@ export default function SiteHeader() {
           <div className="flex flex-1 items-center justify-center px-6 pb-12">
             <nav className="w-full max-w-sm" aria-label="Mobile primary">
               <div className="flex flex-col gap-5 text-center">
-                {NAV_ITEMS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="rounded-2xl px-6 py-4 text-3xl font-semibold text-zinc-100 hover:bg-teal-400 hover:text-zinc-900"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {NAV_ITEMS.map((item) => {
+                  const active = isActivePath(item.href, pathname);
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "rounded-2xl px-6 py-4 text-3xl font-semibold transition-colors",
+                        active
+                          ? " text-teal-400"
+                          : "text-zinc-100 hover:bg-teal-400 hover:text-zinc-900"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}{" "}
               </div>
             </nav>
           </div>
