@@ -17,7 +17,7 @@ export default function ServiceCard({
   return (
     <div
       className={[
-        "flex h-full flex-col rounded-2xl border border-border bg-card overflow-hidden transition",
+        "flex h-full flex-col rounded-2xl border border-border bg-card overflow-hidden transition cursor-pointer",
         "group-hover:border-teal-400/40 group-hover:shadow-lg",
         "group-focus-visible:border-teal-400/60 group-focus-visible:shadow-lg",
         className,
