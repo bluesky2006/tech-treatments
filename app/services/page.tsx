@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import BulletList from "@/components/BulletList";
@@ -8,14 +9,36 @@ import ServiceModal from "@/components/ServiceModal";
 import ServiceCardGrid from "@/components/ServiceCardGrid";
 import { services as SERVICES, type ServiceKey } from "@/lib/services";
 
+function isServiceKey(value: string | null): value is ServiceKey {
+  return value === "help" || value === "upgrades" || value === "custom" || value === "retro";
+}
+
 export default function ServicesPage() {
   const services = useMemo(() => SERVICES, []);
   const [openKey, setOpenKey] = useState<ServiceKey | null>(null);
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  useEffect(() => {
+    const key = searchParams.get("service");
+    if (isServiceKey(key)) setOpenKey(key);
+  }, [searchParams]);
 
   const activeService = useMemo(
     () => services.find((s) => s.key === openKey) ?? null,
     [openKey, services]
   );
+
+  function handleOpen(key: ServiceKey) {
+    setOpenKey(key);
+    router.replace(`/services?service=${key}`, { scroll: false });
+  }
+
+  function handleClose() {
+    setOpenKey(null);
+    router.replace("/services", { scroll: false });
+  }
 
   return (
     <>
@@ -78,15 +101,11 @@ export default function ServicesPage() {
       {/* Cards */}
       <section className="pb-10">
         <Container>
-          <ServiceCardGrid services={services} onOpen={setOpenKey} />
+          <ServiceCardGrid services={services} onOpen={handleOpen} />
         </Container>
       </section>
 
-      <ServiceModal
-        open={openKey !== null}
-        onClose={() => setOpenKey(null)}
-        service={activeService}
-      />
+      <ServiceModal open={openKey !== null} onClose={handleClose} service={activeService} />
     </>
   );
 }
