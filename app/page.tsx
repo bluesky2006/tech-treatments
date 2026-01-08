@@ -1,188 +1,68 @@
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import HomeCard from "@/components/HomeCard";
-import FAQSection from "@/components/FAQSection";
+// import Testimonials from "@/components/Testimonials";
+import ServiceArea from "@/components/ServiceArea";
+// import { testimonials } from "@/lib/testimonials";
+import { homeCards } from "@/lib/homeCards";
+import { homeFaqs } from "@/lib/homeFaqs";
+
+const FAQ_TEASER_COUNT = 4;
 
 export default function HomePage() {
   return (
     <>
       <section className="relative min-h-dvh overflow-hidden flex items-center">
-        {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url(/hero.jpg)" }}
           aria-hidden="true"
         />
-        {/* Overlay for contrast */}
         <div className="absolute inset-0 bg-zinc-900/75" aria-hidden="true" />
-        {/* Content */}
+
         <Container>
           <div className="relative -mt-16 md:-mt-24">
             <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
               Local computer help
             </p>
+
             <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl text-zinc-100">
               Friendly computer help in the Somerset&nbsp;area
             </h1>
+
             <p className="mt-8 max-w-3xl text-zinc-100">
               Repairs, upgrades, restorations and new builds – no jargon, no pressure. Based near
               Frome, Somerset.
             </p>
+
             <div className="mt-12 flex flex-wrap gap-3">
               <ButtonLink variant="primary" href="/contact">
                 Get in touch
               </ButtonLink>
               <ButtonLink href="/services">See services</ButtonLink>
             </div>
+
             <p className="mt-8 text-sm text-zinc-100/90">
               Not sure what you need? That’s fine – just tell me what’s going wrong.
             </p>
           </div>
         </Container>
       </section>
-      <section className="pt-10">
+
+      <section className="py-5">
         <Container>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <HomeCard
-              title="Help & repairs"
-              points={[
-                "Slow laptops and PCs",
-                "Crashes, errors and odd behaviour",
-                "Printers, Wi-Fi and setup help",
-              ]}
-              src="/icons/pc-tower.png"
-              href="/services?service=help"
-            />
-            <HomeCard
-              title="Upgrades"
-              points={[
-                "SSD and RAM upgrades",
-                "Tune-ups and health checks",
-                "Cooler, quieter machines (case-by-case)",
-              ]}
-              src="/icons/cpu.png"
-              href="/services?service=upgrades"
-            />
-            <HomeCard
-              title="New & custom PCs"
-              points={[
-                "Quiet home office builds",
-                "Gaming PCs (budget-aware)",
-                "Creative workstations",
-              ]}
-              src="/icons/tower-pc.png"
-              href="/services?service=custom"
-            />
-            <HomeCard
-              title="Retro & disposal"
-              points={[
-                "Retro machines and restoration",
-                "Emulation builds",
-                "Secure wiping and recycling",
-              ]}
-              src="/icons/computer.png"
-              href="/services?service=retro"
-            />
+            {homeCards.map((card) => (
+              <HomeCard key={card.title} {...card} />
+            ))}
           </div>
         </Container>
       </section>
-      <section className="py-4">
-        <Container>
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <div className="grid gap-6 md:grid-cols-2 md:items-stretch">
-              {/* Left: copy */}
-              <div>
-                <h2 className="text-lg font-semibold">Service area</h2>
-                <p className="mt-3 text-sm text-foreground">
-                  Based in Frome but serving most of Somerset. Home visits available depending on
-                  the job. Workshop-style jobs can be collected and returned.
-                </p>
 
-                <div className="mt-5">
-                  <ButtonLink variant="primary" href="/contact">
-                    Ask about availability
-                  </ButtonLink>
-                </div>
+      {/* Enable when you have real testimonials */}
+      {/* <Testimonials items={testimonials} /> */}
 
-                <p className="mt-24 text-xs text-muted">
-                  Tip: If you’re outside Frome, mention your postcode and I’ll confirm if I can get
-                  to you.
-                </p>
-              </div>
-
-              {/* Right: map */}
-              <div className="overflow-hidden rounded-xl border border-border bg-background">
-                <div className="relative h-64 w-full md:h-full min-h-64">
-                  <iframe
-                    title="Map showing Frome, Somerset"
-                    className="absolute inset-0 h-full w-full grayscale-100 contrast-100"
-                    src="https://www.openstreetmap.org/export/embed.html
-?bbox=-2.65,51.05,-2.05,51.40
-&layer=mapnik
-&marker=51.229,-2.323"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-        <section>
-          <Container>
-            <FAQSection
-              title="Frequently asked questions"
-              intro="Quick answers – if you’re unsure, just get in touch."
-              items={[
-                {
-                  q: "Do you do home visits?",
-                  a: "Yes, depending on the job. Some problems are best handled at home, especially things like Wi-Fi, printers, or full setup issues. Workshop-style jobs can be collected and returned.",
-                },
-                {
-                  q: "What areas do you cover?",
-                  a: "Primarily Frome and the surrounding areas, though often wider Somerset. If you’re not sure, send your postcode and I’ll confirm.",
-                },
-                {
-                  q: "Can you help me with [insert exotic machine here]?",
-                  a: "I can help with many systems and platforms, new and old – just ask!",
-                },
-                {
-                  q: "Can you help me decide whether it’s worth fixing?",
-                  a: "Definitely. I’ll explain the options and likely costs up front – and I’m happy to tell you when something isn’t worth doing.",
-                },
-                {
-                  q: "Will my files and photos be safe?",
-                  a: "I treat your data with care. If anything involves moving or backing up files, I’ll explain what’s happening and give you clear choices.",
-                },
-                {
-                  q: "How much does it usually cost?",
-                  a: "It depends on the job, but I’ll always explain costs before doing any work. Simple fixes are often inexpensive and upgrades are priced clearly as labour plus parts.",
-                },
-                {
-                  q: "Do you offer remote support?",
-                  a: "Sometimes. For certain software issues, remote help can be quicker and cheaper. If it’s suitable, I’ll suggest it.",
-                },
-                {
-                  q: "Can you help me with my business set-up?",
-                  a: "I can assist with setting up new systems, networks and software for small businesses – just get in touch to discuss your needs.",
-                },
-                {
-                  q: "How long does a typical job take?",
-                  a: "Many issues can be resolved the same day. Others may take longer depending on parts or complexity. I’ll give you a realistic timeframe up front.",
-                },
-                {
-                  q: "Do you help with old or unusual computers?",
-                  a: "Yes. I enjoy restoration and retro projects, from reviving older machines to building emulation setups for classic games.",
-                },
-                {
-                  q: "What happens to old computers you collect?",
-                  a: "Where possible, machines are reused or refurbished. If that’s not practical, they’re responsibly recycled. Secure data wiping is available on request.",
-                },
-              ]}
-            />
-          </Container>
-        </section>
-      </section>
+      <ServiceArea />
     </>
   );
 }
