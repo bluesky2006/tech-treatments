@@ -2,6 +2,12 @@ import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import FAQSection from "@/components/FAQSection";
 import { homeFaqs } from "@/lib/homeFaqs";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "FAQ",
+  description: "FAQ for Tech Treatments – friendly computer help in Frome and nearby villages.",
+};
 
 export default function FAQPage() {
   return (

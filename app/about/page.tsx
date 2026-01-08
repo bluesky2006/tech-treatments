@@ -6,8 +6,7 @@ import BulletList from "@/components/BulletList";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "About Tech Treatments – friendly, plain-English computer help in Frome and nearby villages.",
+  description: "About Tech Treatments – friendly computer help in Frome and nearby villages.",
 };
 
 export default function AboutPage() {
