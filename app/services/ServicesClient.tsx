@@ -51,9 +51,7 @@ export default function ServicesClient() {
                 Services
               </p>
 
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
-                What I can help with
-              </h1>
+              <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">What I can help with</h1>
 
               <p className="mt-8 max-w-2xl text-foreground">
                 Simple, practical help – focused on getting you back up and running. If you’re
@@ -74,7 +72,7 @@ export default function ServicesClient() {
 
             <div className="md:col-span-5 md:mt-10">
               <div className="rounded-3xl border border-border bg-card p-6">
-                <h2 className="text-xl font-semibold tracking-tight">What about cost?</h2>
+                <h2 className="text-xl font-semibold ">What about cost?</h2>
                 <p className="mt-3 text-foreground">
                   I’ll always explain options and likely costs before doing any work.
                 </p>
@@ -104,7 +102,7 @@ export default function ServicesClient() {
       <section className="bg-border/20 pt-10 pb-16">
         <Container>
           <div className="mb-6">
-            <h2 className="text-lg font-semibold tracking-tight">Choose a service</h2>
+            <h2 className="text-lg font-semibold ">Choose a service</h2>
             <p className="mt-2 text-sm text-muted">
               Click a service to see what’s included and typical jobs.
             </p>

@@ -21,7 +21,7 @@ export default function AboutPage() {
                 About
               </p>
 
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">
                 Calm, practical tech help
               </h1>
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
                 landfill.
               </p>
               <div className="mt-10">
-                <h2 className="text-xl font-semibold tracking-tight">What you can expect</h2>
+                <h2 className="text-xl font-semibold ">What you can expect</h2>
                 <p className="mt-2">
                   No jargon, no pressure – just sensible help and clear options.
                 </p>

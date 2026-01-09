@@ -23,7 +23,7 @@ export default function HomePage() {
               Local computer help
             </p>
 
-            <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl text-zinc-100">
+            <h1 className="mt-6 text-4xl font-semibold sm:text-5xl text-zinc-100">
               Friendly computer help in the Somerset&nbsp;area
             </h1>
 

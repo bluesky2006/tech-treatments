@@ -25,7 +25,7 @@ export default function FAQSection({
       <div className="rounded-3xl border border-border bg-card p-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div className="max-w-2xl">
-            <h2 id={sectionId} className="text-xl font-semibold tracking-tight">
+            <h2 id={sectionId} className="text-xl font-semibold ">
               {title}
             </h2>
             {intro && <p className="mt-2 text-sm text-muted">{intro}</p>}

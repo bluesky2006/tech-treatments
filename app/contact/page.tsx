@@ -19,16 +19,14 @@ export default function ContactPage() {
                 Contact
               </p>
 
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
-                Get in touch
-              </h1>
+              <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">Get in touch</h1>
 
               <p className="mt-6 max-w-2xl text-foreground">
                 Select the type of help you need and tell me what’s going wrong. I’ll get back to
                 you as soon as I can.
               </p>
               <div className="mt-8">
-                <h2 className="text-xl font-semibold tracking-tight mt-12">Quick contact</h2>
+                <h2 className="text-xl font-semibold mt-12">Quick contact</h2>
 
                 <p className="mt-3 text-foreground">
                   Email:{" "}
