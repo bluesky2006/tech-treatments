@@ -43,7 +43,7 @@ export default function ServicesClient() {
   return (
     <>
       {/* Hero */}
-      <section className="pb-4 pt-32">
+      <section className="pb-10 pt-32">
         <Container>
           <div className="grid gap-10 md:grid-cols-12 md:items-start">
             <div className="md:col-span-7">
@@ -67,7 +67,7 @@ export default function ServicesClient() {
                 </ButtonLink>
               </div>
 
-              <p className="mt-24 text-sm text-muted">
+              <p className="mt-12 text-sm text-muted">
                 Based near Frome, Somerset – home visits available depending on the job.
               </p>
             </div>
@@ -99,8 +99,17 @@ export default function ServicesClient() {
       </section>
 
       {/* Cards */}
-      <section className="pb-10">
+
+      {/* Cards */}
+      <section className="bg-border/20 pt-10 pb-16">
         <Container>
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold tracking-tight">Choose a service</h2>
+            <p className="mt-2 text-sm text-muted">
+              Click a service to see what’s included and typical jobs.
+            </p>
+          </div>
+
           <ServiceCardGrid services={services} onOpen={handleOpen} />
         </Container>
       </section>
