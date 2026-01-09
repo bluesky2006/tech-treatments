@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicesClient from "./ServicesClient";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Computer Services in Frome | Repairs, Upgrades & Builds",
@@ -8,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <ServicesClient />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ServicesClient />
+    </Suspense>
+  );
 }
