@@ -19,7 +19,7 @@ export const services: ServiceData[] = [
     key: "help",
     title: "Computer Help & Repairs",
     cardDescription:
-      "Help when something isn’t working properly – slow performance, crashes, startup problems, printers or Wi-Fi that won’t behave. I focus on calm troubleshooting and clear explanations in plain English.",
+      "Help when something isn’t working properly – **slow performance**, **crashes**, **startup problems**, **printers** or **Wi-Fi** that won’t behave. I focus on calm troubleshooting and clear explanations in plain English.",
     cardPoints: [
       "Slow computers, crashes and startup issues",
       "Errors, pop-ups and software problems",
@@ -53,7 +53,7 @@ export const services: ServiceData[] = [
     key: "upgrades",
     title: "Upgrades & Performance Improvements",
     cardDescription:
-      "Targeted upgrades that genuinely improve how your computer feels to use. I’ll advise honestly on what’s worth doing – and just as importantly, what isn’t – so you don’t spend money unnecessarily.",
+      "Targeted upgrades that genuinely **improve how your computer feels to use**. I’ll advise honestly on what’s worth doing – and just as importantly, what isn’t – so you don’t spend money unnecessarily.",
     cardPoints: [
       "SSD upgrades (often the biggest speed boost)",
       "RAM upgrades where they actually help",
@@ -81,7 +81,7 @@ export const services: ServiceData[] = [
     key: "custom",
     title: "New & Custom Computers",
     cardDescription:
-      "Computers built around how you actually use them – whether that’s home office work, creative projects or gaming. Sensible component choices, tidy builds and no unnecessary extras.",
+      "Computers built around how you actually use them – whether that’s **home office** work, **creative projects** or **gaming**. Sensible component choices, tidy builds and no unnecessary extras.",
     cardPoints: [
       "Quiet home office PCs",
       "Gaming PCs with explainable choices",
@@ -108,7 +108,7 @@ export const services: ServiceData[] = [
     key: "retro",
     title: "Retro, Reuse & Responsible Disposal",
     cardDescription:
-      "Careful handling of older and end-of-life computers – from sympathetic retro restoration to secure data wiping and responsible recycling. Focused on preservation, reuse and honesty.",
+      "Careful handling of older and end-of-life computers – from sympathetic **retro restoration** to **secure data wiping** and **responsible recycling**. Focused on preservation, reuse and honesty.",
     cardPoints: [
       "Retro computers and vintage systems",
       "Era-appropriate storage upgrades",
