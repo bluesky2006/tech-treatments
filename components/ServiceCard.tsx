@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BulletList from "./BulletList";
+import { renderEmphasis } from "@/lib/formatText";
 
 export default function ServiceCard({
   title,
@@ -35,7 +36,7 @@ export default function ServiceCard({
 
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="mt-3 text-foreground">{description}</p>
+        <p className="mt-3 text-foreground">{renderEmphasis(description)}</p>
         <BulletList items={points} className="mt-4" />
         <p className="mt-auto pt-4 text-sm text-foreground text-right transition group-hover:text-teal-400">
           Click for more details{" "}
