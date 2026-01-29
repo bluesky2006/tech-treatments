@@ -3,6 +3,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { Roboto } from "next/font/google";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
@@ -23,6 +24,21 @@ const roboto = Roboto({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GB" className={roboto.variable}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-L60W4LP0XB"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L60W4LP0XB');
+          `}
+        </Script>
+      </head>
+
       <body className="min-h-dvh bg-background text-foreground antialiased font-sans">
         <SiteHeader />
         <main>{children}</main>
