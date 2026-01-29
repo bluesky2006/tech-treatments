@@ -19,16 +19,16 @@ export const services: ServiceData[] = [
     key: "help",
     title: "Computer Help & Repairs",
     cardDescription:
-      "Help when something isn’t working properly – **slow performance**, **crashes**, **startup problems**, **printers** or **Wi-Fi** that won’t behave. I focus on calm troubleshooting and clear explanations in plain English.",
+      "Help when something isn’t working properly – **slow performance**, **crashes**, **startup problems**, **printers**, **Wi-Fi**, and everyday device setup (TVs, phones and tablets). Calm troubleshooting and clear explanations in plain English.",
     cardPoints: [
       "Slow computers, crashes and startup issues",
       "Errors, pop-ups and software problems",
-      "Printers, Wi-Fi and everyday setup issues",
-      "Honest advice if it’s not worth fixing",
+      "Printers, Wi-Fi and home setup problems",
+      "New devices set up properly (TVs, phones, tablets)",
     ],
     imageSrc: "/bsod.jpg",
     intro:
-      "Practical help for everyday computer problems – with clear explanations and sensible next steps.",
+      "Practical help for everyday tech problems and setup – with clear explanations and sensible next steps.",
     whatYouGet: [
       "A quick assessment of what’s actually wrong",
       "The simplest sensible fix first",
@@ -40,6 +40,8 @@ export const services: ServiceData[] = [
       "Startup issues and confusing error messages",
       "Printers, scanners and home Wi-Fi problems",
       "New computer setup and handover",
+      "New TV setup and streaming apps",
+      "Phone and tablet setup",
       "Email, accounts and password help",
       "Backups and basic security checks",
     ],

@@ -10,19 +10,15 @@ export const homeCards: HomeCardData[] = [
     title: "Help & repairs",
     points: [
       "Slow laptops and PCs",
-      "Crashes, errors and odd behaviour",
-      "Printers, Wi-Fi and setup help",
+      "Crashes, errors, odd behaviour",
+      "Wi-Fi, printers and device setup (TVs, phones)",
     ],
     src: "/icons/pc-tower.png",
     href: "/services?service=help",
   },
   {
     title: "Upgrades",
-    points: [
-      "SSD and RAM upgrades",
-      "Tune-ups and health checks",
-      "Cooler, quieter machines (case-by-case)",
-    ],
+    points: ["SSD and RAM upgrades", "Tune-ups and health checks", "Cooler, quieter machines"],
     src: "/icons/cpu.png",
     href: "/services?service=upgrades",
   },
