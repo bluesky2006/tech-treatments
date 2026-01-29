@@ -9,15 +9,19 @@ export type FAQItem = {
 export const homeFaqs: FAQItem[] = [
   {
     q: "Do you do home visits?",
-    a: "Yes, depending on the job. Some problems are best handled at home, especially things like Wi-Fi, printers, or full setup issues. Workshop-style jobs can be collected and returned.",
+    a: "Yes, depending on the job. Some problems are best handled at home, especially Wi-Fi, printers, TVs and device setup. Workshop-style jobs can be collected and returned.",
   },
   {
     q: "What areas do you cover?",
     a: "Primarily Frome and the surrounding areas, though often wider Somerset. If you’re not sure, send your postcode and I’ll confirm.",
   },
   {
+    q: "Do you work with Macs and Windows PCs?",
+    a: "Yes – Windows and macOS, as well as Linux. Plus iPhones/iPads and Android.",
+  },
+  {
     q: "Can you help me with [insert exotic machine here]?",
-    a: "I can help with many systems and platforms, new and old – just ask!",
+    a: "Often, yes. I work with plenty of systems, new and old. If you tell me what it is and what it’s doing (or not doing), I’ll let you know whether it’s something I can take on.",
   },
   {
     q: "Can you help me decide whether it’s worth fixing?",
@@ -29,7 +33,7 @@ export const homeFaqs: FAQItem[] = [
   },
   {
     q: "How much does it usually cost?",
-    a: "It depends on the job, but I’ll always explain costs before doing any work. Simple fixes are often inexpensive and upgrades are priced clearly as labour plus parts.",
+    a: "It depends on the job, but I’ll always explain costs before doing any work. Simple fixes are often quick, and upgrades are priced clearly as labour plus parts.",
   },
   {
     q: "Do you offer remote support?",
@@ -37,11 +41,11 @@ export const homeFaqs: FAQItem[] = [
   },
   {
     q: "Can you help me with my business set-up?",
-    a: "I can assist with setting up new systems, networks and software for small businesses – just get in touch to discuss your needs.",
+    a: "Yes. I can help small businesses get set up with the basics – computers, Wi-Fi, printers, accounts and backups. Get in touch and I’ll suggest a sensible approach.",
   },
   {
     q: "How long does a typical job take?",
-    a: "Many issues can be resolved the same day. Others may take longer depending on parts or complexity. I’ll give you a realistic timeframe up front.",
+    a: "Some issues can be resolved quickly, while others take longer depending on parts or complexity. I’ll give you a realistic timeframe up front and keep you updated if anything changes.",
   },
   {
     q: "Do you help with old or unusual computers?",
