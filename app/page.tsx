@@ -38,10 +38,6 @@ export default function HomePage() {
               </ButtonLink>
               <ButtonLink href="/services">See services</ButtonLink>
             </div>
-
-            <p className="mt-8 text-sm text-zinc-100/90">
-              Not sure what you need? That’s fine – just tell me what’s going wrong.
-            </p>
           </div>
         </Container>
       </section>
