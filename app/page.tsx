@@ -3,8 +3,8 @@ import ButtonLink from "@/components/ButtonLink";
 import HomeCard from "@/components/HomeCard";
 import ServiceArea from "@/components/ServiceArea";
 import { homeCards } from "@/lib/homeCards";
-// import Testimonials from "@/components/Testimonials";
-// import { testimonials } from "@/lib/testimonials";
+import Testimonials from "@/components/Testimonials";
+import { testimonials } from "@/lib/testimonials";
 
 export default function HomePage() {
   return (
@@ -52,8 +52,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Enable when you have real testimonials */}
-      {/* <Testimonials items={testimonials} /> */}
+      <Testimonials items={testimonials} />
 
       <ServiceArea />
     </>

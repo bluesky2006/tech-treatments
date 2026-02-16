@@ -3,8 +3,7 @@ import Container from "@/components/Container";
 export type Testimonial = {
   quote: string;
   name: string;
-  location?: string;
-  service?: string;
+  rating: number; // 1–5
 };
 
 type TestimonialsProps = {
@@ -12,6 +11,20 @@ type TestimonialsProps = {
   intro?: string;
   items: Testimonial[];
 };
+
+function Stars({ rating }: { rating: number }) {
+  const total = 5;
+
+  return (
+    <div className="mt-2 flex items-center text-yellow-500">
+      {Array.from({ length: total }).map((_, i) => (
+        <span key={i} className={i < rating ? "opacity-100" : "opacity-30"}>
+          ★
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function Testimonials({
   title = "What people say",
@@ -38,14 +51,10 @@ export default function Testimonials({
                   <span className="text-muted">”</span>
                 </blockquote>
 
-                <figcaption className="mt-4 text-sm">
+                <figcaption className="mt-3 text-sm">
                   <div className="font-semibold text-foreground">{t.name}</div>
 
-                  {(t.location || t.service) && (
-                    <div className="mt-1 text-xs text-muted">
-                      {[t.location, t.service].filter(Boolean).join(" · ")}
-                    </div>
-                  )}
+                  <Stars rating={t.rating} />
                 </figcaption>
               </figure>
             ))}

@@ -2,21 +2,9 @@ import type { Testimonial } from "@/components/Testimonials";
 
 export const testimonials: Testimonial[] = [
   {
-    quote: "Really friendly and explained everything clearly. Laptop is noticeably faster now.",
-    name: "Customer name",
-    location: "Frome",
-    service: "Help & repairs",
-  },
-  {
-    quote: "Quick, tidy work and no pressure. Gave honest advice about what was worth doing.",
-    name: "Customer name",
-    location: "Somerset",
-    service: "Upgrades",
-  },
-  {
-    quote: "Set up my new computer and moved everything across. Took all the stress out of it.",
-    name: "Customer name",
-    location: "Frome",
-    service: "Setup",
+    quote:
+      "I had been unable to use my laptop properly for a long time as it needed a good sort out to maximise the storage. Simon sorted my laptop issue very quickly and clearly explained everything which was needing to be done. I’m really happy I can use it again now and would recommend Simon’s services.",
+    name: "Han B",
+    rating: 5,
   },
 ];
