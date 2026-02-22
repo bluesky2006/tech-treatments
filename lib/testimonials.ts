@@ -7,4 +7,10 @@ export const testimonials: Testimonial[] = [
     name: "Han B",
     rating: 5,
   },
+  {
+    quote:
+      "Life saver!!! Saved our e-commerce business from meltdown ... Simon solved a serious email issue in 5 minutes!! Something that we spent a day trying to figure out and we're not bad at IT .. but it's depth of experience that counts. Simon has it in spades. Can't recommend highly enough.",
+    name: "Liz Rutherford",
+    rating: 5,
+  },
 ];
