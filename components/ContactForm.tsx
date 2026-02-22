@@ -95,6 +95,10 @@ export default function ContactForm() {
           placeholder="e.g., Laptop is very slow, takes ages to start, worried about photos…"
           required
         />
+        <p className="mt-2 text-xs text-muted">
+          Having trouble with email? Please include a phone number (or other means of contact) so I
+          can reach you.
+        </p>
       </div>
 
       <button
