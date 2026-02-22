@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const headlines = [
-  "Working from home and want your setup sorted?",
-  "Updated your Mac/PC and now everything feels different?",
+  "Working from home and need an office setup sorted?",
+  "Updated your computer and now everything feels different?",
   "Laptop running slow, noisy or constantly 'thinking'?",
-  "Need a new computer but not sure what to buy?",
+  "Looking for a new computer but don't know what to buy?",
   "Not sure what to do with that old computer lying around?",
 ];
 
@@ -29,7 +29,7 @@ export default function RotatingHeadline() {
 
   return (
     <h1
-      className={`mt-6 text-4xl font-semibold sm:text-5xl text-zinc-100 transition-opacity duration-500 ${
+      className={`mt-6 text-4xl font-semibold sm:text-5xl text-zinc-100 transition-opacity duration-500 leading-tight ${
         visible ? "opacity-100" : "opacity-0"
       }`}
     >
