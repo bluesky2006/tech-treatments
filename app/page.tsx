@@ -5,6 +5,7 @@ import ServiceArea from "@/components/ServiceArea";
 import { homeCards } from "@/lib/homeCards";
 import Testimonials from "@/components/Testimonials";
 import { testimonials } from "@/lib/testimonials";
+import RotatingHeadline from "@/components/RotatingHeadline";
 
 export default function HomePage() {
   return (
@@ -23,13 +24,12 @@ export default function HomePage() {
               Local computer help
             </p>
 
-            <h1 className="mt-6 text-4xl font-semibold sm:text-5xl text-zinc-100">
-              Friendly computer help in the Somerset&nbsp;area
-            </h1>
+            <RotatingHeadline />
 
-            <p className="mt-8 max-w-3xl text-zinc-100">
-              Repairs, upgrades, restorations and new builds – no jargon, no pressure. Based near
-              Frome, Somerset.
+            <p className="mt-8 max-w-3xl text-lg sm:text-xl text-zinc-100 leading-tight">
+              Clear, practical computer help –{" "}
+              <span className="text-teal-400 font-medium">repairs, upgrades and new setups</span>{" "}
+              across Frome and the wider Somerset area.
             </p>
 
             <div className="mt-12 flex flex-wrap gap-3">
