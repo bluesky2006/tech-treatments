@@ -32,9 +32,9 @@ export default function ContactPage() {
                   Email:{" "}
                   <a
                     className="underline decoration-border underline-offset-4 hover:text-foreground/80"
-                    href="mailto:hello@techtreatments.co.uk"
+                    href="mailto:techtreatments@gmail.com"
                   >
-                    hello@techtreatments.co.uk
+                    techtreatments@gmail.com
                   </a>
                 </p>
                 <p className="mt-12 text-sm text-muted">

@@ -49,8 +49,8 @@ export async function sendContactEmail(formData: FormData) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const to = process.env.CONTACT_TO_EMAIL;
-    const from = process.env.CONTACT_FROM_EMAIL;
+    const to = "techtreatments@gmail.com";
+    const from = "techtreatments@gmail.com";
 
     if (!apiKey || !to || !from) {
       return { ok: false, error: "Email is not configured on the server yet." } as const;
