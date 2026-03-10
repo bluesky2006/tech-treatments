@@ -1,9 +1,18 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import BulletList from "./BulletList";
 import type { ServiceData } from "@/lib/services";
+
+const FOCUSABLE_SELECTOR = [
+  "a[href]",
+  "button:not([disabled])",
+  "textarea:not([disabled])",
+  "input:not([disabled])",
+  "select:not([disabled])",
+  '[tabindex]:not([tabindex="-1"])',
+].join(", ");
 
 export default function ServiceModal({
   open,
@@ -14,21 +23,47 @@ export default function ServiceModal({
   onClose: () => void;
   service: ServiceData | null;
 }) {
-  // Esc to close
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     if (!open) return;
+
+    previousFocusRef.current =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
 
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    const focusableElements = Array.from(
+      dialogRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? []
+    );
+
+    focusableElements[0]?.focus();
+
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
+
+      if (e.key !== "Tab" || focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      const activeElement = document.activeElement;
+
+      if (e.shiftKey && activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = prev;
       window.removeEventListener("keydown", onKeyDown);
+      previousFocusRef.current?.focus();
     };
   }, [open, onClose]);
 
@@ -50,7 +85,10 @@ export default function ServiceModal({
       />
 
       {/* Panel */}
-      <div className="relative mx-4 w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-3xl bg-card shadow-2xl">
+      <div
+        ref={dialogRef}
+        className="relative mx-4 w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-3xl bg-card shadow-2xl"
+      >
         {/* Image header */}
         <div className="relative hidden h-56 w-full md:block">
           <Image
