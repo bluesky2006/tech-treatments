@@ -14,24 +14,24 @@ export const homeCards: HomeCardData[] = [
       "Wi-Fi, printers and device setup (TVs, phones)",
     ],
     src: "/icons/pc-tower.png",
-    href: "/services?service=help",
+    href: "/services/computer-repairs",
   },
   {
     title: "Upgrades",
     points: ["SSD and RAM upgrades", "Tune-ups and health checks", "Cooler, quieter machines"],
     src: "/icons/cpu.png",
-    href: "/services?service=upgrades",
+    href: "/services/upgrades",
   },
   {
     title: "New & custom PCs",
     points: ["Quiet home office builds", "Gaming PCs (budget-aware)", "Creative workstations"],
     src: "/icons/tower-pc.png",
-    href: "/services?service=custom",
+    href: "/services/custom-pcs",
   },
   {
     title: "Retro & disposal",
     points: ["Retro machines and restoration", "Emulation builds", "Secure wiping and recycling"],
     src: "/icons/computer.png",
-    href: "/services?service=retro",
+    href: "/services/retro-restoration-disposal",
   },
 ];

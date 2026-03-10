@@ -2,10 +2,13 @@ export type ServiceKey = "help" | "upgrades" | "custom" | "retro";
 
 export type ServiceData = {
   key: ServiceKey;
+  slug: string;
   title: string;
   cardDescription: string;
   cardPoints: string[];
   imageSrc: string;
+  metaTitle: string;
+  metaDescription: string;
 
   intro: string;
   whatYouGet: string[];
@@ -17,7 +20,11 @@ export type ServiceData = {
 export const services: ServiceData[] = [
   {
     key: "help",
-    title: "Computer Help & Repairs",
+    slug: "computer-repairs",
+    title: "Computer help & repairs",
+    metaTitle: "Computer Repairs in Frome",
+    metaDescription:
+      "Computer repairs and everyday tech help in Frome, from slow PCs and startup problems to Wi-Fi, printers and device setup.",
     cardDescription:
       "Help when something isn’t working properly – **slow performance**, **crashes**, **startup problems**, **printers**, **Wi-Fi**, and everyday device setup (TVs, phones and tablets). Calm troubleshooting and clear explanations in plain English.",
     cardPoints: [
@@ -30,7 +37,7 @@ export const services: ServiceData[] = [
     intro:
       "Practical help for everyday tech problems and setup – with clear explanations and sensible next steps.",
     whatYouGet: [
-      "A quick assessment of what’s actually wrong",
+      "A quick assessment of what’s wrong",
       "The simplest sensible fix first",
       "Clear explanation in plain English",
       "Advice if repair isn’t worthwhile",
@@ -53,7 +60,11 @@ export const services: ServiceData[] = [
 
   {
     key: "upgrades",
-    title: "Upgrades & Performance Improvements",
+    slug: "upgrades",
+    title: "Upgrades & performance improvements",
+    metaTitle: "Computer Upgrades in Frome",
+    metaDescription:
+      "SSD upgrades, RAM upgrades and performance improvements for laptops and desktops in Frome and nearby Somerset villages.",
     cardDescription:
       "Targeted upgrades that genuinely **improve how your computer feels to use**. I’ll advise honestly on what’s worth doing – and just as importantly, what isn’t – so you don’t spend money unnecessarily.",
     cardPoints: [
@@ -81,7 +92,11 @@ export const services: ServiceData[] = [
 
   {
     key: "custom",
-    title: "New & Custom Computers",
+    slug: "custom-pcs",
+    title: "New & custom computers",
+    metaTitle: "Custom PCs in Frome",
+    metaDescription:
+      "Custom PCs and new computer builds in Frome for home office work, gaming and creative projects, with sensible parts choices and setup included.",
     cardDescription:
       "Computers built around how you actually use them – whether that’s **home office** work, **creative projects** or **gaming**. Sensible component choices, tidy builds and no unnecessary extras.",
     cardPoints: [
@@ -108,7 +123,11 @@ export const services: ServiceData[] = [
 
   {
     key: "retro",
-    title: "Retro, Reuse & Responsible Disposal",
+    slug: "retro-restoration-disposal",
+    title: "Retro, reuse & responsible disposal",
+    metaTitle: "Retro Computer Restoration in Frome",
+    metaDescription:
+      "Retro computer restoration, secure data wiping and responsible computer disposal in Frome and the wider Somerset area.",
     cardDescription:
       "Careful handling of older and end-of-life computers – from sympathetic **retro restoration** to **secure data wiping** and **responsible recycling**. Focused on preservation, reuse and honesty.",
     cardPoints: [
@@ -139,3 +158,7 @@ export const services: ServiceData[] = [
     ],
   },
 ];
+
+export function getServiceBySlug(slug: string) {
+  return services.find((service) => service.slug === slug) ?? null;
+}
