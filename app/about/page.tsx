@@ -7,6 +7,9 @@ import BulletList from "@/components/BulletList";
 export const metadata: Metadata = {
   title: "About",
   description: "About Tech Treatments – friendly computer help in Frome and nearby villages.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

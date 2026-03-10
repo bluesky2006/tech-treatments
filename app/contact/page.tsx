@@ -5,6 +5,9 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact Tech Treatments – friendly computer help in Frome and nearby villages.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

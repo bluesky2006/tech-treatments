@@ -4,14 +4,41 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import localFont from "next/font/local";
 import Script from "next/script";
+import StructuredData from "@/components/StructuredData";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Tech Treatments – Friendly Computer Help in Somerset",
     template: "%s – Tech Treatments",
   },
   description:
     "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds and responsible disposal. Frome and nearby villages.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: "Tech Treatments – Friendly Computer Help in Somerset",
+    description:
+      "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds and responsible disposal. Frome and nearby villages.",
+    url: "/",
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        alt: "Tech Treatments computer help in Somerset",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tech Treatments – Friendly Computer Help in Somerset",
+    description:
+      "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds and responsible disposal. Frome and nearby villages.",
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
+  },
 };
 
 const roboto = localFont({
@@ -25,6 +52,31 @@ const roboto = localFont({
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "ComputerStore",
+    "@id": absoluteUrl("/#business"),
+    name: SITE_NAME,
+    url: absoluteUrl("/"),
+    image: absoluteUrl(DEFAULT_OG_IMAGE),
+    email: "techtreatments@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Frome",
+      addressRegion: "Somerset",
+      addressCountry: "GB",
+    },
+    areaServed: ["Frome", "Somerset"],
+    priceRange: "$$",
+    knowsAbout: [
+      "Computer repairs",
+      "Computer upgrades",
+      "Custom PCs",
+      "Retro computer restoration",
+      "Responsible computer disposal",
+    ],
+  };
+
   return (
     <html lang="en-GB" className={roboto.variable}>
       <head>
@@ -43,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
 
       <body className="min-h-dvh bg-background text-foreground antialiased font-sans">
+        <StructuredData data={localBusinessSchema} />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

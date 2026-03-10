@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import HomeCard from "@/components/HomeCard";
@@ -6,10 +7,30 @@ import { homeCards } from "@/lib/homeCards";
 import Testimonials from "@/components/Testimonials";
 import { testimonials } from "@/lib/testimonials";
 import RotatingHeadline from "@/components/RotatingHeadline";
+import StructuredData from "@/components/StructuredData";
+import { absoluteUrl, SITE_NAME } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Computer Repairs and Tech Help in Frome",
+  description:
+    "Friendly computer repairs, upgrades, custom PCs and home tech help in Frome and nearby Somerset villages.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: absoluteUrl("/"),
+  };
+
   return (
     <>
+      <StructuredData data={homeSchema} />
+
       <section className="relative min-h-dvh overflow-hidden flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -29,7 +50,7 @@ export default function HomePage() {
             <p className="mt-8 max-w-3xl text-lg sm:text-xl text-zinc-100 leading-tight">
               Clear, practical computer help –{" "}
               <span className="text-teal-400 font-medium">repairs, upgrades and new setups</span>{" "}
-              across Frome and the wider Somerset area.
+              across Frome, nearby villages and the wider Somerset area.
             </p>
 
             <div className="mt-12 flex flex-wrap gap-3">
