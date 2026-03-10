@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import { cn } from "@/lib/cn";
+import { services } from "@/lib/services";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
@@ -14,6 +15,11 @@ const NAV_ITEMS = [
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+const SERVICE_NAV_ITEMS = services.map((service) => ({
+  href: `/services/${service.slug}`,
+  label: service.title,
+}));
 
 function Brand({
   isHome,
@@ -101,6 +107,16 @@ export default function SiteHeader() {
   );
 
   const linkClass = "relative rounded-xl px-3 py-2 transition-colors hover:text-teal-400";
+  const desktopLinkTone = (active: boolean) =>
+    cn(
+      active
+        ? isHome
+          ? "text-zinc-100"
+          : "text-zinc-900 dark:text-zinc-100"
+        : isHome
+        ? "text-zinc-100/90"
+        : "text-zinc-900/80 dark:text-zinc-100/80"
+    );
 
   const iconBtnClass = cn(
     "md:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 transition-colors",
@@ -121,21 +137,66 @@ export default function SiteHeader() {
               {NAV_ITEMS.map((item) => {
                 const active = isActivePath(item.href, pathname);
 
+                if (item.href === "/services") {
+                  return (
+                    <div key={item.href} className="group relative">
+                      <Link
+                        href={item.href}
+                        aria-current={active ? "page" : undefined}
+                        className={cn(linkClass, "inline-flex items-center gap-2", desktopLinkTone(active))}
+                      >
+                        {item.label}
+                        <span
+                          aria-hidden="true"
+                          className="text-xs transition-transform duration-200 group-hover:translate-y-px group-focus-within:translate-y-px"
+                        >
+                          ▾
+                        </span>
+
+                        <span
+                          aria-hidden="true"
+                          className={cn(
+                            "absolute left-3 right-3 bottom-0 h-0.5 rounded-full transition-opacity bg-teal-400/70",
+                            active ? "opacity-100" : "opacity-0"
+                          )}
+                        />
+                      </Link>
+
+                      <div className="absolute left-0 top-full pt-3 opacity-0 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto">
+                        <div className="w-72 rounded border border-border bg-background/95 p-3 shadow-xl backdrop-blur-md">
+                          <div className="flex flex-col gap-1">
+                            {SERVICE_NAV_ITEMS.map((serviceItem) => {
+                              const serviceActive = pathname === serviceItem.href;
+
+                              return (
+                                <Link
+                                  key={serviceItem.href}
+                                  href={serviceItem.href}
+                                  aria-current={serviceActive ? "page" : undefined}
+                                  className={cn(
+                                    "rounded px-3 py-2 text-sm transition-colors",
+                                    serviceActive
+                                      ? "bg-teal-400/15 text-teal-400"
+                                      : "hover:bg-teal-400 hover:text-zinc-900"
+                                  )}
+                                >
+                                  {serviceItem.label}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={cn(
-                      linkClass,
-                      active
-                        ? isHome
-                          ? "text-zinc-100"
-                          : "text-zinc-900 dark:text-zinc-100"
-                        : isHome
-                        ? "text-zinc-100/90"
-                        : "text-zinc-900/80 dark:text-zinc-100/80"
-                    )}
+                    className={cn(linkClass, desktopLinkTone(active))}
                   >
                     {item.label}
 
