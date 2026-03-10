@@ -13,4 +13,10 @@ export const testimonials: Testimonial[] = [
     name: "Liz Rutherford",
     rating: 5,
   },
+  {
+    quote:
+      "Got my laptop issues diagnosed and repaired super quick. Very Knowledgable and trustworthy- highly recommended.",
+    name: "Arif Haq",
+    rating: 5,
+  },
 ];
