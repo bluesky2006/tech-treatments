@@ -174,7 +174,7 @@ export default function SiteHeader() {
                                   href={serviceItem.href}
                                   aria-current={serviceActive ? "page" : undefined}
                                   className={cn(
-                                    "rounded px-3 py-2 text-sm transition-colors",
+                                    "rounded px-3 py-2 text-sm text-zinc-900 transition-colors dark:text-zinc-100",
                                     serviceActive
                                       ? "bg-teal-400/15 text-teal-400"
                                       : "hover:bg-teal-400 hover:text-zinc-900"
