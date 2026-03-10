@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -14,9 +14,12 @@ export const metadata: Metadata = {
     "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds and responsible disposal. Frome and nearby villages.",
 };
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
+const roboto = localFont({
+  src: [
+    { path: "./fonts/Roboto-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/Roboto-Medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/Roboto-Bold.ttf", weight: "700", style: "normal" },
+  ],
   variable: "--font-sans",
   display: "swap",
 });

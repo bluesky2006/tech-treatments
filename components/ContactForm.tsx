@@ -7,6 +7,7 @@ export default function ContactForm() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<{ ok: boolean; message: string } | null>(null);
+  const [submittedAt, setSubmittedAt] = useState(() => String(Date.now()));
 
   return (
     <form
@@ -20,13 +21,29 @@ export default function ContactForm() {
 
           if (res.ok) {
             formRef.current?.reset();
+            setSubmittedAt(String(Date.now()));
             setStatus({ ok: true, message: "Thanks – message sent. I’ll get back to you soon." });
           } else {
+            setSubmittedAt(String(Date.now()));
             setStatus({ ok: false, message: res.error ?? "Something went wrong." });
           }
         });
       }}
     >
+      <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          defaultValue=""
+        />
+      </div>
+
+      <input type="hidden" name="submittedAt" value={submittedAt} />
+
       <div>
         <label className="block text-xs font-medium tracking-wide text-muted uppercase">Name</label>
         <input
@@ -93,6 +110,7 @@ export default function ContactForm() {
           className="mt-2 min-h-35 w-full resize-y rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200/30 focus:ring-2 focus:ring-teal-200/10"
           name="message"
           placeholder="e.g., Laptop is very slow, takes ages to start, worried about photos…"
+          maxLength={4000}
           required
         />
         <p className="mt-2 text-xs text-muted">
