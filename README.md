@@ -67,3 +67,13 @@ npm run dev
 ```
 
 The app will be available at `http://localhost:3000`.
+
+For the contact form to send mail, set these server environment variables:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+CONTACT_FROM_EMAIL=noreply@your-verified-domain.com
+CONTACT_TO_EMAIL=techtreatments@gmail.com
+```
+
+`CONTACT_FROM_EMAIL` should be a sender address verified with Resend. Using an arbitrary Gmail address as the sender is likely to fail.

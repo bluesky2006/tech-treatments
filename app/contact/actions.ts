@@ -49,11 +49,14 @@ export async function sendContactEmail(formData: FormData) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const to = "techtreatments@gmail.com";
-    const from = "techtreatments@gmail.com";
+    const to = process.env.CONTACT_TO_EMAIL?.trim();
+    const from = process.env.CONTACT_FROM_EMAIL?.trim();
 
     if (!apiKey || !to || !from) {
-      return { ok: false, error: "Email is not configured on the server yet." } as const;
+      return {
+        ok: false,
+        error: "Email is not configured on the server yet.",
+      } as const;
     }
 
     const resend = new Resend(apiKey);
@@ -62,7 +65,7 @@ export async function sendContactEmail(formData: FormData) {
 
     const { error } = await resend.emails.send({
       from: `Tech Treatments <${from}>`,
-      to,
+      to: [to],
       replyTo: email,
       subject: `New ${serviceText} enquiry from ${name} (Tech Treatments)`,
       text: [

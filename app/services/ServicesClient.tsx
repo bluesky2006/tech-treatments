@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
@@ -15,15 +15,11 @@ function isServiceKey(value: string | null): value is ServiceKey {
 
 export default function ServicesClient() {
   const services = SERVICES;
-  const [openKey, setOpenKey] = useState<ServiceKey | null>(null);
 
   const searchParams = useSearchParams();
   const router = useRouter();
-
-  useEffect(() => {
-    const key = searchParams.get("service");
-    if (isServiceKey(key)) setOpenKey(key);
-  }, [searchParams]);
+  const serviceParam = searchParams.get("service");
+  const openKey = isServiceKey(serviceParam) ? serviceParam : null;
 
   const activeService = useMemo(
     () => services.find((s) => s.key === openKey) ?? null,
@@ -31,12 +27,10 @@ export default function ServicesClient() {
   );
 
   function handleOpen(key: ServiceKey) {
-    setOpenKey(key);
     router.replace(`/services?service=${key}`, { scroll: false });
   }
 
   function handleClose() {
-    setOpenKey(null);
     router.replace("/services", { scroll: false });
   }
 
