@@ -30,7 +30,7 @@ export default function ContactForm() {
         });
       }}
     >
-      <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+      <div className="absolute -left-2499.75 top-auto h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>
         <input
           id="website"
