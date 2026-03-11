@@ -13,14 +13,14 @@ import { absoluteUrl, DEFAULT_OG_IMAGE, SERVICE_AREAS, SITE_NAME } from "@/lib/s
 export const metadata: Metadata = {
   title: "Computer Repairs and Tech Help in Frome",
   description:
-    "Friendly computer repairs, upgrades, custom PCs and home tech help in Frome and nearby Somerset villages.",
+    "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Computer Repairs and Tech Help in Frome | Tech Treatments",
     description:
-      "Friendly computer repairs, upgrades, custom PCs and home tech help in Frome and nearby Somerset villages.",
+      "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
     url: "/",
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Computer Repairs and Tech Help in Frome | Tech Treatments",
     description:
-      "Friendly computer repairs, upgrades, custom PCs and home tech help in Frome and nearby Somerset villages.",
+      "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
     images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
