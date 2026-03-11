@@ -47,7 +47,7 @@ export default function ContactForm() {
       <div>
         <label className="block text-xs font-medium tracking-wide text-muted uppercase">Name</label>
         <input
-          className="mt-2 w-full rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200/30 focus:ring-2 focus:ring-teal-200/10"
+          className="mt-2 w-full rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10"
           name="name"
           autoComplete="name"
           placeholder="Your name"
@@ -60,7 +60,7 @@ export default function ContactForm() {
           Email
         </label>
         <input
-          className="mt-2 w-full rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200/30 focus:ring-2 focus:ring-teal-200/10"
+          className="mt-2 w-full rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10"
           name="email"
           type="email"
           autoComplete="email"
@@ -80,7 +80,7 @@ export default function ContactForm() {
     px-3 py-2 pr-9
     text-sm text-foreground
     outline-none
-    focus:border-teal-200/30 focus:ring-2 focus:ring-teal-200/10
+    focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10
     bg-no-repeat bg-[length:20px]
     bg-position-[right_12px_center]
   "
@@ -107,7 +107,7 @@ export default function ContactForm() {
           What’s going on?
         </label>
         <textarea
-          className="mt-2 min-h-35 w-full resize-y rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200/30 focus:ring-2 focus:ring-teal-200/10"
+          className="mt-2 min-h-35 w-full resize-y rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10"
           name="message"
           placeholder="e.g., Laptop is very slow, takes ages to start, worried about photos…"
           maxLength={4000}
@@ -122,7 +122,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex h-11 w-full items-center justify-center rounded-xl border border-teal-200/30 bg-teal-300 px-4 text-sm font-semibold text-zinc-900 transition hover:scale-101 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="inline-flex h-11 w-full items-center justify-center rounded-xl border border-teal-200 bg-teal-300 px-4 text-sm font-semibold text-zinc-900 transition hover:scale-101 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {isPending ? "Sending…" : "Send"}
       </button>
