@@ -9,7 +9,7 @@ export default function ServiceContent({ service }: { service: ServiceData }) {
   return (
     <div className="space-y-6">
       <section className="rounded-xl border border-border bg-card p-6 sm:p-8">
-        <h2 className="text-2xl font-semibold">How this usually works</h2>
+        <h2 className="text-2xl font-semibold">How it works</h2>
         <BulletList
           items={service.whatYouGet}
           className="mt-5 space-y-3 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-3 sm:space-y-0"
