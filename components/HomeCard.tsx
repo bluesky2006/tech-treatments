@@ -12,7 +12,7 @@ type HomeCardProps = {
 export default function HomeCard({ title, points, src, href }: HomeCardProps) {
   const CardInner = (
     <div className="h-full rounded-2xl border border-border bg-card p-5 transition hover:shadow-sm flex flex-col">
-      <Image alt="" src={src} width={70} height={70} />
+      <Image alt={`${title} icon`} src={src} width={70} height={70} />
       <h2 className="mt-4 text-xl font-semibold">{title}</h2>
       <BulletList items={points} className="mt-4 text-sm" />
     </div>
