@@ -8,6 +8,7 @@ export default function SiteFooter() {
           <div>
             <p>© {new Date().getFullYear()} Tech Treatments. Frome, Somerset.</p>
             <p className="mt-2">Computer repairs, upgrades and local tech help across Frome and nearby villages.</p>
+            <p className="mt-2">Hours: Monday to Friday, 9am to 5pm.</p>
           </div>
           <p className="flex flex-wrap gap-2">
             <a className="hover:text-zinc-100" href="mailto:techtreatments@gmail.com">

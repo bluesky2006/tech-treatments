@@ -1,6 +1,7 @@
 // src/components/ServiceArea.tsx
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
+import { SERVICE_AREAS } from "@/lib/site";
 
 export default function ServiceArea() {
   return (
@@ -12,8 +13,10 @@ export default function ServiceArea() {
             <div>
               <h2 className="text-lg font-semibold">Service area</h2>
               <p className="mt-3 text-sm text-foreground">
-                Based in Frome but serving most of Somerset. Home visits available depending on the
-                job. Workshop-style jobs can be collected and returned.
+                Based in Frome and serving much of the surrounding area within roughly an hour’s
+                drive of BA11 3LQ. That often includes {SERVICE_AREAS.slice(1, 10).join(", ")} and
+                nearby villages. Home visits are available depending on the job, and workshop-style
+                jobs can be collected and returned.
               </p>
 
               <div className="mt-5">
@@ -23,8 +26,7 @@ export default function ServiceArea() {
               </div>
 
               <p className="mt-24 text-xs text-muted">
-                Tip: If you’re outside Frome, mention your postcode and I’ll confirm if I can get to
-                you.
+                If you are outside those areas, mention your postcode and I’ll confirm availability.
               </p>
             </div>
 
