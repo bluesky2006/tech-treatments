@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import ServiceContent from "@/components/ServiceContent";
@@ -101,6 +102,18 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <Container>
         <StructuredData data={serviceSchema} />
         <StructuredData data={breadcrumbSchema} />
+
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link href="/services" className="hover:text-foreground">
+                Services
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li className="text-foreground">{service.title}</li>
+          </ol>
+        </nav>
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,1.1fr)] lg:items-end">
           <div className="max-w-2xl">

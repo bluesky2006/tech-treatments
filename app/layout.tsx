@@ -8,6 +8,8 @@ import StructuredData from "@/components/StructuredData";
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
+  GOOGLE_BUSINESS_PROFILE_URL,
+  LOGO_IMAGE,
   SERVICE_AREAS,
   SITE_NAME,
   SITE_URL,
@@ -16,20 +18,20 @@ import {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Tech Treatments – Friendly Computer Help in Somerset",
+    default: "Tech Treatments – Computer Help in Frome and Somerset",
     template: "%s – Tech Treatments",
   },
   description:
-    "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds and responsible disposal. Frome and nearby villages.",
+    "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: "Tech Treatments – Friendly Computer Help in Somerset",
+    title: "Tech Treatments – Computer Help in Frome and Somerset",
     description:
-      "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds and responsible disposal. Frome and nearby villages.",
+      "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
     url: "/",
     images: [
       {
@@ -40,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tech Treatments – Friendly Computer Help in Somerset",
+    title: "Tech Treatments – Computer Help in Frome and Somerset",
     description:
-      "Friendly computer help for everyday people – repairs, upgrades, restorations, custom builds and responsible disposal. Frome and nearby villages.",
+      "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
     images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
@@ -65,7 +67,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: SITE_NAME,
     url: absoluteUrl("/"),
     image: absoluteUrl(DEFAULT_OG_IMAGE),
+    logo: absoluteUrl(LOGO_IMAGE),
     email: "techtreatments@gmail.com",
+    sameAs: [GOOGLE_BUSINESS_PROFILE_URL],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Frome",
