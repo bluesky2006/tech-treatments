@@ -5,7 +5,13 @@ import SiteFooter from "@/components/SiteFooter";
 import localFont from "next/font/local";
 import Script from "next/script";
 import StructuredData from "@/components/StructuredData";
-import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  absoluteUrl,
+  DEFAULT_OG_IMAGE,
+  SERVICE_AREAS,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -54,7 +60,7 @@ const roboto = localFont({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "ComputerStore",
+    "@type": "ComputerRepair",
     "@id": absoluteUrl("/#business"),
     name: SITE_NAME,
     url: absoluteUrl("/"),
@@ -66,8 +72,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       addressRegion: "Somerset",
       addressCountry: "GB",
     },
-    areaServed: ["Frome", "Somerset"],
+    areaServed: SERVICE_AREAS,
     priceRange: "$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "17:00",
+      },
+    ],
     knowsAbout: [
       "Computer repairs",
       "Computer upgrades",

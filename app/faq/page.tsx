@@ -4,13 +4,30 @@ import FAQSection from "@/components/FAQSection";
 import { homeFaqs } from "@/lib/homeFaqs";
 import type { Metadata } from "next";
 import StructuredData from "@/components/StructuredData";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "FAQ",
   description: "FAQ for Tech Treatments – friendly computer help in Frome and nearby villages.",
   alternates: {
     canonical: "/faq",
+  },
+  openGraph: {
+    title: "Tech Treatments FAQ",
+    description: "FAQ for Tech Treatments – friendly computer help in Frome and nearby villages.",
+    url: "/faq",
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        alt: "Tech Treatments FAQ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tech Treatments FAQ",
+    description: "FAQ for Tech Treatments – friendly computer help in Frome and nearby villages.",
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
 

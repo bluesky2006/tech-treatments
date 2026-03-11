@@ -1,12 +1,30 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SERVICE_AREAS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact Tech Treatments – friendly computer help in Frome and nearby villages.",
   alternates: {
     canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Tech Treatments",
+    description: "Contact Tech Treatments – friendly computer help in Frome and nearby villages.",
+    url: "/contact",
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        alt: "Contact Tech Treatments in Frome",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Tech Treatments",
+    description: "Contact Tech Treatments – friendly computer help in Frome and nearby villages.",
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
 
@@ -41,7 +59,9 @@ export default function ContactPage() {
                   </a>
                 </p>
                 <p className="mt-12 text-sm text-muted">
-                  Based near Frome – home visits available depending on the job.
+                  Based near Frome. Typical hours are Monday to Friday, 9am to 5pm. Home visits are
+                  available depending on the job across {SERVICE_AREAS.slice(0, 8).join(", ")} and
+                  the wider local area.
                 </p>
               </div>
             </div>

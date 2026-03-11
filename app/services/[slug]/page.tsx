@@ -45,6 +45,12 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.metaTitle} | ${SITE_NAME}`,
+      description: service.metaDescription,
+      images: [absoluteUrl(service.imageSrc)],
+    },
   };
 }
 
@@ -71,11 +77,30 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     serviceType: service.title,
     url: absoluteUrl(path),
   };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Services",
+        item: absoluteUrl("/services"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: service.title,
+        item: absoluteUrl(path),
+      },
+    ],
+  };
 
   return (
     <section className="pb-16 pt-32">
       <Container>
         <StructuredData data={serviceSchema} />
+        <StructuredData data={breadcrumbSchema} />
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,1.1fr)] lg:items-end">
           <div className="max-w-2xl">

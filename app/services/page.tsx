@@ -4,6 +4,7 @@ import ButtonLink from "@/components/ButtonLink";
 import BulletList from "@/components/BulletList";
 import ServiceCardGrid from "@/components/ServiceCardGrid";
 import { services } from "@/lib/services";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SERVICE_AREAS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Computer Services in Frome",
@@ -11,6 +12,25 @@ export const metadata: Metadata = {
     "Computer repairs, upgrades, custom PCs and retro restoration in Frome and nearby Somerset villages.",
   alternates: {
     canonical: "/services",
+  },
+  openGraph: {
+    title: "Computer Services in Frome | Tech Treatments",
+    description:
+      "Computer repairs, upgrades, custom PCs and retro restoration in Frome and nearby Somerset villages.",
+    url: "/services",
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        alt: "Tech Treatments computer services in Frome and Somerset",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Computer Services in Frome | Tech Treatments",
+    description:
+      "Computer repairs, upgrades, custom PCs and retro restoration in Frome and nearby Somerset villages.",
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
 
@@ -42,8 +62,8 @@ export default function ServicesPage() {
               </div>
 
               <p className="mt-12 text-sm text-muted">
-                Based near Frome, Somerset. Home visits are available depending on the job, including
-                nearby villages and the wider local area.
+                Based near Frome, Somerset. Home visits are available depending on the job across{" "}
+                {SERVICE_AREAS.slice(1, 9).join(", ")} and the wider local area.
               </p>
             </div>
 

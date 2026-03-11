@@ -8,7 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import { testimonials } from "@/lib/testimonials";
 import RotatingHeadline from "@/components/RotatingHeadline";
 import StructuredData from "@/components/StructuredData";
-import { absoluteUrl, SITE_NAME } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Computer Repairs and Tech Help in Frome",
@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "Friendly computer repairs, upgrades, custom PCs and home tech help in Frome and nearby Somerset villages.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "Computer Repairs and Tech Help in Frome | Tech Treatments",
+    description:
+      "Friendly computer repairs, upgrades, custom PCs and home tech help in Frome and nearby Somerset villages.",
+    url: "/",
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        alt: "Tech Treatments computer help in Frome and Somerset",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Computer Repairs and Tech Help in Frome | Tech Treatments",
+    description:
+      "Friendly computer repairs, upgrades, custom PCs and home tech help in Frome and nearby Somerset villages.",
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
 

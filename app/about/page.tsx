@@ -3,12 +3,30 @@ import Image from "next/image";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import BulletList from "@/components/BulletList";
+import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description: "About Tech Treatments – friendly computer help in Frome and nearby villages.",
   alternates: {
     canonical: "/about",
+  },
+  openGraph: {
+    title: "About Tech Treatments",
+    description: "About Tech Treatments – friendly computer help in Frome and nearby villages.",
+    url: "/about",
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        alt: "About Tech Treatments in Frome",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Tech Treatments",
+    description: "About Tech Treatments – friendly computer help in Frome and nearby villages.",
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
 
