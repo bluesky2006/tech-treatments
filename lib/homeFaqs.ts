@@ -1,5 +1,6 @@
 // src/lib/homeFaqs.ts
 import type { ReactNode } from "react";
+import { SERVICE_AREAS } from "./site";
 
 export type FAQItem = {
   q: string;
@@ -13,7 +14,7 @@ export const homeFaqs: FAQItem[] = [
   },
   {
     q: "What areas do you cover?",
-    a: "Primarily Frome and the surrounding areas, though often wider Somerset. If you’re not sure, send your postcode and I’ll confirm.",
+    a: `Primarily ${SERVICE_AREAS.slice(0, 8).join(", ")}, though often wider Somerset. If you’re not sure, send your postcode and I’ll confirm.`,
   },
   {
     q: "Do you work with Macs and Windows PCs?",

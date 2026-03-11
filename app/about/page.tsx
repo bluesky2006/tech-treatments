@@ -3,7 +3,7 @@ import Image from "next/image";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import BulletList from "@/components/BulletList";
-import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SERVICE_AREAS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -79,7 +79,8 @@ export default function AboutPage() {
                   </ButtonLink>
                 </div>
                 <p className="mt-14 text-sm text-muted">
-                  Based near Frome, Somerset – home visits available depending on the job.
+                  Based near Frome, Somerset. Home visits are available depending on the job across{" "}
+                  {SERVICE_AREAS.slice(0, 8).join(", ")} and nearby villages.
                 </p>
               </div>
             </div>

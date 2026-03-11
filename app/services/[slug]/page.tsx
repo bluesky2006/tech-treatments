@@ -5,7 +5,7 @@ import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import ServiceContent from "@/components/ServiceContent";
 import StructuredData from "@/components/StructuredData";
-import { absoluteUrl, SITE_NAME } from "@/lib/site";
+import { absoluteUrl, SERVICE_AREAS, SITE_NAME } from "@/lib/site";
 import { getServiceBySlug, services } from "@/lib/services";
 
 type ServicePageProps = {
@@ -68,7 +68,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     "@type": "Service",
     name: service.title,
     description: service.metaDescription,
-    areaServed: ["Frome", "Somerset"],
+    areaServed: SERVICE_AREAS,
     provider: {
       "@type": "LocalBusiness",
       name: SITE_NAME,
@@ -112,6 +112,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               {service.metaDescription} Home visits are available depending on the job.
             </p>
             <p className="mt-4 text-foreground">{service.intro}</p>
+            <p className="mt-4 text-sm text-muted">
+              Typical local coverage includes {SERVICE_AREAS.slice(0, 8).join(", ")} and nearby
+              villages, depending on the job.
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink variant="primary" href="/contact">
                 Ask about this service

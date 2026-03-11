@@ -8,7 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import { testimonials } from "@/lib/testimonials";
 import RotatingHeadline from "@/components/RotatingHeadline";
 import StructuredData from "@/components/StructuredData";
-import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SERVICE_AREAS, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Computer Repairs and Tech Help in Frome",
@@ -69,7 +69,8 @@ export default function HomePage() {
             <p className="mt-8 max-w-3xl text-lg sm:text-xl text-zinc-100 leading-tight">
               Clear, practical computer help –{" "}
               <span className="text-teal-400 font-medium">repairs, upgrades and new setups</span>{" "}
-              across Frome, nearby villages and the wider Somerset area.
+              across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider
+              Somerset area.
             </p>
 
             <div className="mt-12 flex flex-wrap gap-3">
@@ -89,6 +90,11 @@ export default function HomePage() {
               <HomeCard key={card.title} {...card} />
             ))}
           </div>
+
+          <p className="mt-6 text-sm text-muted">
+            Home visits are available depending on the job across {SERVICE_AREAS.slice(0, 8).join(", ")}{" "}
+            and nearby villages.
+          </p>
         </Container>
       </section>
 
