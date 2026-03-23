@@ -6,7 +6,6 @@ import ServiceArea from "@/components/ServiceArea";
 import { homeCards } from "@/lib/homeCards";
 import Testimonials from "@/components/Testimonials";
 import { testimonials } from "@/lib/testimonials";
-import RotatingHeadline from "@/components/RotatingHeadline";
 import StructuredData from "@/components/StructuredData";
 import { absoluteUrl, DEFAULT_OG_IMAGE, SERVICE_AREAS, SITE_NAME } from "@/lib/site";
 
@@ -64,7 +63,9 @@ export default function HomePage() {
               Local computer help
             </p>
 
-            <RotatingHeadline />
+            <h1 className="mt-6 text-4xl font-semibold leading-tight text-zinc-100 sm:text-5xl">
+              Friendly computer help for homes and small businesses
+            </h1>
 
             <p className="mt-8 max-w-3xl text-lg sm:text-xl text-zinc-100 leading-tight">
               Clear, practical computer help –{" "}
