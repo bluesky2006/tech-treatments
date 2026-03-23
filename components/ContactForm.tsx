@@ -3,6 +3,22 @@
 import { useRef, useState, useTransition } from "react";
 import { sendContactEmail } from "@/app/contact/actions";
 
+const selectClassName = `
+  mt-2 w-full appearance-none
+  rounded-xl border border-border bg-card
+  px-3 py-2 pr-9
+  text-sm text-foreground
+  outline-none
+  focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10
+  bg-no-repeat bg-[length:20px]
+  bg-position-[right_12px_center]
+`;
+
+const selectArrowStyle = {
+  backgroundImage:
+    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%239CA3AF' stroke-width='2'%3E%3Cpolyline points='6 8 10 12 14 8'/%3E%3C/svg%3E\")",
+};
+
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -74,23 +90,11 @@ export default function ContactForm() {
         </label>
 
         <select
-          className="
-    mt-2 w-full appearance-none
-    rounded-xl border border-border bg-card
-    px-3 py-2 pr-9
-    text-sm text-foreground
-    outline-none
-    focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10
-    bg-no-repeat bg-[length:20px]
-    bg-position-[right_12px_center]
-  "
+          className={selectClassName}
           name="service"
           defaultValue=""
           required
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%239CA3AF' stroke-width='2'%3E%3Cpolyline points='6 8 10 12 14 8'/%3E%3C/svg%3E\")",
-          }}
+          style={selectArrowStyle}
         >
           <option value="" disabled>
             Select a service…
@@ -100,6 +104,29 @@ export default function ContactForm() {
           <option value="custom">New & custom PCs</option>
           <option value="retro">Retro & disposal</option>
           <option value="not_sure">Not sure</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-xs font-medium tracking-wide text-muted uppercase">
+          Where did you hear about us?
+        </label>
+
+        <select
+          className={selectClassName}
+          name="referralSource"
+          defaultValue=""
+          required
+          style={selectArrowStyle}
+        >
+          <option value="" disabled>
+            Select an option…
+          </option>
+          <option value="google">Google</option>
+          <option value="friend">Referred by a friend</option>
+          <option value="returning_customer">Returning customer</option>
+          <option value="social_media">Social media</option>
+          <option value="local_ad">Local ad or flyer</option>
+          <option value="other">Other</option>
         </select>
       </div>
       <div>

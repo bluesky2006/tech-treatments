@@ -46,11 +46,44 @@ function isAllowedService(value: string) {
   );
 }
 
+function referralSourceLabel(value: string) {
+  switch (value) {
+    case "google":
+      return "Google";
+    case "friend":
+      return "Referred by a friend";
+    case "returning_customer":
+      return "Returning customer";
+    case "social_media":
+      return "Social media";
+    case "local_ad":
+      return "Local ad or flyer";
+    case "other":
+      return "Other";
+    default:
+      return value;
+  }
+}
+
+function isAllowedReferralSource(value: string) {
+  return (
+    value === "google" ||
+    value === "friend" ||
+    value === "family" ||
+    value === "returning_customer" ||
+    value === "social_media" ||
+    value === "local_ad" ||
+    value === "community_group" ||
+    value === "other"
+  );
+}
+
 export async function sendContactEmail(formData: FormData) {
   try {
     const name = String(formData.get("name") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
     const service = String(formData.get("service") ?? "").trim();
+    const referralSource = String(formData.get("referralSource") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
     const website = String(formData.get("website") ?? "").trim();
     const submittedAt = Number(formData.get("submittedAt") ?? 0);
@@ -71,6 +104,12 @@ export async function sendContactEmail(formData: FormData) {
     }
     if (!isAllowedService(service)) {
       return { ok: false, error: "Please select a valid service." } as const;
+    }
+    if (!referralSource) {
+      return { ok: false, error: "Please select where you heard about us." } as const;
+    }
+    if (!isAllowedReferralSource(referralSource)) {
+      return { ok: false, error: "Please select a valid option for where you heard about us." } as const;
     }
     if (!isEmail(email)) {
       return { ok: false, error: "Please enter a valid email address." } as const;
@@ -99,6 +138,7 @@ export async function sendContactEmail(formData: FormData) {
     const resend = new Resend(apiKey);
 
     const serviceText = serviceLabel(service);
+    const referralSourceText = referralSourceLabel(referralSource);
 
     const { error } = await resend.emails.send({
       from: `Tech Treatments <${from}>`,
@@ -107,6 +147,7 @@ export async function sendContactEmail(formData: FormData) {
       subject: `New ${serviceText} enquiry from ${name} (Tech Treatments)`,
       text: [
         `Service: ${serviceText}`,
+        `Where they heard about us: ${referralSourceText}`,
         `Name: ${name}`,
         `Email: ${email}`,
         ``,
