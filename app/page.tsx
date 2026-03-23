@@ -64,7 +64,7 @@ export default function HomePage() {
             </p>
 
             <h1 className="mt-6 text-4xl font-semibold leading-tight text-zinc-100 sm:text-5xl">
-              Friendly computer help for homes and small businesses
+              Friendly computer help for homes and small&nbsp;businesses
             </h1>
 
             <p className="mt-8 max-w-3xl text-lg sm:text-xl text-zinc-100 leading-tight">
