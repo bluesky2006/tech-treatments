@@ -86,25 +86,31 @@ export default function ContactForm() {
       </div>
       <div>
         <label className="block text-xs font-medium tracking-wide text-muted uppercase">
-          Service needed
+          Subject
         </label>
-
-        <select
-          className={selectClassName}
-          name="service"
-          defaultValue=""
+        <input
+          className="mt-2 w-full rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10"
+          name="subject"
+          placeholder="Brief summary of what you need help with"
+          maxLength={150}
           required
-          style={selectArrowStyle}
-        >
-          <option value="" disabled>
-            Select a service…
-          </option>
-          <option value="help">Help & repairs</option>
-          <option value="upgrades">Upgrades</option>
-          <option value="custom">New & custom PCs</option>
-          <option value="retro">Retro & disposal</option>
-          <option value="not_sure">Not sure</option>
-        </select>
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium tracking-wide text-muted uppercase">
+          What’s going on?
+        </label>
+        <textarea
+          className="mt-2 min-h-35 w-full resize-y rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10"
+          name="message"
+          placeholder="e.g., Laptop is very slow, takes ages to start, worried about photos…"
+          maxLength={4000}
+          required
+        />
+        <p className="mt-2 text-xs text-muted">
+          If you are having trouble with email, please include another means of contact so I
+          can reach you.
+        </p>
       </div>
       <div>
         <label className="block text-xs font-medium tracking-wide text-muted uppercase">
@@ -123,27 +129,13 @@ export default function ContactForm() {
           </option>
           <option value="google">Google</option>
           <option value="friend">Referred by a friend</option>
+          <option value="family">Referred by family</option>
           <option value="returning_customer">Returning customer</option>
           <option value="social_media">Social media</option>
           <option value="local_ad">Local ad or flyer</option>
+          <option value="community_group">Community group</option>
           <option value="other">Other</option>
         </select>
-      </div>
-      <div>
-        <label className="block text-xs font-medium tracking-wide text-muted uppercase">
-          What’s going on?
-        </label>
-        <textarea
-          className="mt-2 min-h-35 w-full resize-y rounded-xl border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted outline-none focus:border-teal-200 focus:ring-2 focus:ring-teal-200/10"
-          name="message"
-          placeholder="e.g., Laptop is very slow, takes ages to start, worried about photos…"
-          maxLength={4000}
-          required
-        />
-        <p className="mt-2 text-xs text-muted">
-          Having trouble with email? Please include a phone number (or other means of contact) so I
-          can reach you.
-        </p>
       </div>
 
       <button

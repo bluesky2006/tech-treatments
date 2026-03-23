@@ -4,6 +4,7 @@ import { Resend } from "resend";
 
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 254;
+const MAX_SUBJECT_LENGTH = 150;
 const MAX_MESSAGE_LENGTH = 4000;
 const MIN_SUBMISSION_AGE_MS = 3000;
 
@@ -19,45 +20,22 @@ function getErrorMessage(err: unknown) {
   return undefined;
 }
 
-function serviceLabel(value: string) {
-  switch (value) {
-    case "help":
-      return "Help & repairs";
-    case "upgrades":
-      return "Upgrades";
-    case "custom":
-      return "New & custom PCs";
-    case "retro":
-      return "Retro & disposal";
-    case "not_sure":
-      return "Not sure";
-    default:
-      return value;
-  }
-}
-
-function isAllowedService(value: string) {
-  return (
-    value === "help" ||
-    value === "upgrades" ||
-    value === "custom" ||
-    value === "retro" ||
-    value === "not_sure"
-  );
-}
-
 function referralSourceLabel(value: string) {
   switch (value) {
     case "google":
       return "Google";
     case "friend":
       return "Referred by a friend";
+    case "family":
+      return "Referred by family";
     case "returning_customer":
       return "Returning customer";
     case "social_media":
       return "Social media";
     case "local_ad":
       return "Local ad or flyer";
+    case "community_group":
+      return "Community group";
     case "other":
       return "Other";
     default:
@@ -82,7 +60,7 @@ export async function sendContactEmail(formData: FormData) {
   try {
     const name = String(formData.get("name") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
-    const service = String(formData.get("service") ?? "").trim();
+    const subject = String(formData.get("subject") ?? "").trim();
     const referralSource = String(formData.get("referralSource") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
     const website = String(formData.get("website") ?? "").trim();
@@ -96,14 +74,8 @@ export async function sendContactEmail(formData: FormData) {
       return { ok: false, error: "Please wait a moment and try again." } as const;
     }
 
-    if (!name || !email || !message) {
+    if (!name || !email || !subject || !message) {
       return { ok: false, error: "Please fill in all fields." } as const;
-    }
-    if (!service) {
-      return { ok: false, error: "Please select a service." } as const;
-    }
-    if (!isAllowedService(service)) {
-      return { ok: false, error: "Please select a valid service." } as const;
     }
     if (!referralSource) {
       return { ok: false, error: "Please select where you heard about us." } as const;
@@ -119,6 +91,9 @@ export async function sendContactEmail(formData: FormData) {
     }
     if (email.length > MAX_EMAIL_LENGTH) {
       return { ok: false, error: "Email is too long." } as const;
+    }
+    if (subject.length > MAX_SUBJECT_LENGTH) {
+      return { ok: false, error: "Subject is too long." } as const;
     }
     if (message.length > MAX_MESSAGE_LENGTH) {
       return { ok: false, error: "Message is too long." } as const;
@@ -137,16 +112,15 @@ export async function sendContactEmail(formData: FormData) {
 
     const resend = new Resend(apiKey);
 
-    const serviceText = serviceLabel(service);
     const referralSourceText = referralSourceLabel(referralSource);
 
     const { error } = await resend.emails.send({
       from: `Tech Treatments <${from}>`,
       to: [to],
       replyTo: email,
-      subject: `New ${serviceText} enquiry from ${name} (Tech Treatments)`,
+      subject: `${subject} - ${name} (Tech Treatments)`,
       text: [
-        `Service: ${serviceText}`,
+        `Subject: ${subject}`,
         `Where they heard about us: ${referralSourceText}`,
         `Name: ${name}`,
         `Email: ${email}`,
