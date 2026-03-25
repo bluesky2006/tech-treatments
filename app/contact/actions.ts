@@ -26,16 +26,12 @@ function referralSourceLabel(value: string) {
       return "Google";
     case "friend":
       return "Referred by a friend";
-    case "family":
-      return "Referred by family";
     case "returning_customer":
       return "Returning customer";
     case "social_media":
       return "Social media";
     case "local_ad":
       return "Local ad or flyer";
-    case "community_group":
-      return "Community group";
     case "other":
       return "Other";
     default:
@@ -47,11 +43,9 @@ function isAllowedReferralSource(value: string) {
   return (
     value === "google" ||
     value === "friend" ||
-    value === "family" ||
     value === "returning_customer" ||
     value === "social_media" ||
     value === "local_ad" ||
-    value === "community_group" ||
     value === "other"
   );
 }

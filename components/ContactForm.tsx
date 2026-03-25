@@ -129,11 +129,9 @@ export default function ContactForm() {
           </option>
           <option value="google">Google</option>
           <option value="friend">Referred by a friend</option>
-          <option value="family">Referred by family</option>
           <option value="returning_customer">Returning customer</option>
           <option value="social_media">Social media</option>
           <option value="local_ad">Local ad or flyer</option>
-          <option value="community_group">Community group</option>
           <option value="other">Other</option>
         </select>
       </div>
