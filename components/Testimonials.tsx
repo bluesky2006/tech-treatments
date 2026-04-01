@@ -42,16 +42,19 @@ export default function Testimonials({
             <p className="mt-2 text-sm text-muted">{intro}</p>
           </div>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-4">
             {items.slice(0, 6).map((t, idx) => (
-              <figure key={idx} className="rounded-2xl border border-border bg-background p-5">
+              <figure
+                key={idx}
+                className="flex h-full flex-col rounded-2xl border border-border bg-background p-5"
+              >
                 <blockquote className="text-sm text-foreground">
                   <span className="text-muted">“</span>
                   {t.quote}
                   <span className="text-muted">”</span>
                 </blockquote>
 
-                <figcaption className="mt-3 text-sm">
+                <figcaption className="mt-auto pt-3 text-sm">
                   <div className="font-semibold text-foreground">{t.name}</div>
 
                   <Stars rating={t.rating} />
