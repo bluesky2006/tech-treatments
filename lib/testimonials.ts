@@ -19,4 +19,10 @@ export const testimonials: Testimonial[] = [
     name: "Arif Haq",
     rating: 5,
   },
+  {
+    quote:
+      "Really happy with the service! Simon helped me reset my computer quickly and made everything super easy. Price was very reasonable and communication was great the whole time. Friendly, reliable, and knew exactly what he was doing. Also gave me additional information on another Tech issue that I had. I Would definitely recommend 👍",
+    name: "Rose Dearing",
+    rating: 5,
+  },
 ];
