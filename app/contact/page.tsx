@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
-import ContactForm from "@/components/ContactForm";
-import { absoluteUrl, DEFAULT_OG_IMAGE, SERVICE_AREAS } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -34,49 +33,20 @@ export default function ContactPage() {
       <section className="pb-16 pt-32">
         <Container>
           <div className="grid gap-10 md:grid-cols-12 md:items-start">
-            {/* Left: intro + quick contact */}
-            <div className="md:col-span-7 flex flex-col">
+                        <div className="md:col-span-7 flex flex-col">
               <p className="text-xs font-semibold tracking-widest text-teal-400/80 uppercase">
                 Contact
               </p>
 
-              <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">Get in touch</h1>
+              <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">
+                No longer taking on work
+              </h1>
 
               <p className="mt-6 max-w-2xl text-foreground">
-                Select the type of help you need and tell me what’s going wrong. I’ll get back to
-                you as soon as I can.
+                Tech Treatments has closed and I&rsquo;m no longer offering computer repairs,
+                upgrades or home visits. Thank you to everyone who has used the service over the
+                years.
               </p>
-              <div className="mt-8">
-                <h2 className="text-xl font-semibold mt-12">Quick contact</h2>
-
-                <p className="mt-3 text-foreground">
-                  Email:{" "}
-                  <a
-                    className="underline decoration-border underline-offset-4 hover:text-foreground/80"
-                    href="mailto:techtreatments@gmail.com"
-                  >
-                    techtreatments@gmail.com
-                  </a>
-                </p>
-                <p className="mt-12 text-sm text-muted">
-                  Based near Frome. Typical hours are Monday to Friday, 9am to 5pm. Home visits are
-                  available depending on the job across {SERVICE_AREAS.slice(0, 8).join(", ")} and
-                  the wider local area.
-                </p>
-              </div>
-            </div>
-
-            {/* Right: form */}
-            <div className="md:col-span-5 md:mt-10">
-              <div className="rounded-3xl border border-border bg-card p-6">
-                <h2 className="text-lg font-semibold">Message form</h2>
-                <p className="mt-2 text-sm text-muted">
-                  Send a quick message and I’ll get back to you.
-                </p>
-                <div className="mt-5">
-                  <ContactForm />
-                </div>
-              </div>
             </div>
           </div>
         </Container>

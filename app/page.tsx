@@ -74,9 +74,14 @@ export default function HomePage() {
               Somerset area.
             </p>
 
+            <p className="mt-8 max-w-3xl rounded-2xl border border-teal-400/40 bg-zinc-900/60 px-5 py-4 text-zinc-100">
+              <span className="font-semibold text-teal-400">Please note:</span> Tech Treatments is
+              no longer taking on work. Thank you to everyone who has used the service.
+            </p>
+
             <div className="mt-12 flex flex-wrap gap-3">
               <ButtonLink variant="primary" href="/contact">
-                Get in touch
+                Read more
               </ButtonLink>
               <ButtonLink href="/services">See services</ButtonLink>
             </div>
