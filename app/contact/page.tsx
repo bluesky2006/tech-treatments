@@ -39,13 +39,13 @@ export default function ContactPage() {
               </p>
 
               <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">
-                No longer taking on work
+                Currently closed
               </h1>
 
               <p className="mt-6 max-w-2xl text-foreground">
-                Tech Treatments has closed and I&rsquo;m no longer offering computer repairs,
-                upgrades or home visits. Thank you to everyone who has used the service over the
-                years.
+                Tech Treatments is currently closed so I&rsquo;m not offering computer repairs,
+                upgrades or home visits at this time. Thank you to everyone who has used the
+                service.
               </p>
             </div>
           </div>

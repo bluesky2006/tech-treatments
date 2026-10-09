@@ -5,6 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import localFont from "next/font/local";
 import Script from "next/script";
 import StructuredData from "@/components/StructuredData";
+import ClosedNotice from "@/components/ClosedNotice";
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -117,6 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <ClosedNotice />
       </body>
     </html>
   );
