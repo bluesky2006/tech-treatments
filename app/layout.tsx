@@ -19,20 +19,20 @@ import {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Tech Treatments – Computer Help in Frome and Somerset",
+    default: "Tech Treatments – Currently Closed",
     template: "%s – Tech Treatments",
   },
   description:
-    "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
+    "Tech Treatments is currently closed and not offering computer repairs, upgrades or home visits at this time. Thank you to everyone who has used the service.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: "Tech Treatments – Computer Help in Frome and Somerset",
+    title: "Tech Treatments – Currently Closed",
     description:
-      "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
+      "Tech Treatments is currently closed and not offering computer repairs, upgrades or home visits at this time. Thank you to everyone who has used the service.",
     url: "/",
     images: [
       {
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tech Treatments – Computer Help in Frome and Somerset",
+    title: "Tech Treatments – Currently Closed",
     description:
-      "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
+      "Tech Treatments is currently closed and not offering computer repairs, upgrades or home visits at this time. Thank you to everyone who has used the service.",
     images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
@@ -79,14 +79,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     },
     areaServed: SERVICE_AREAS,
     priceRange: "$$",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "17:00",
-      },
-    ],
     knowsAbout: [
       "Computer repairs",
       "Computer upgrades",

@@ -10,16 +10,16 @@ import StructuredData from "@/components/StructuredData";
 import { absoluteUrl, DEFAULT_OG_IMAGE, SERVICE_AREAS, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Computer Repairs and Tech Help in Frome",
+  title: "Currently Closed",
   description:
-    "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
+    "Tech Treatments is currently closed and not offering computer repairs, upgrades or home visits at this time. Thank you to everyone who has used the service.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Computer Repairs and Tech Help in Frome | Tech Treatments",
+    title: "Currently Closed | Tech Treatments",
     description:
-      "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
+      "Tech Treatments is currently closed and not offering computer repairs, upgrades or home visits at this time. Thank you to everyone who has used the service.",
     url: "/",
     images: [
       {
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Computer Repairs and Tech Help in Frome | Tech Treatments",
+    title: "Currently Closed | Tech Treatments",
     description:
-      "Friendly computer repairs, upgrades, custom PCs and home tech help across Frome, Bath, Trowbridge, Warminster, Wells, Shepton Mallet and the wider Somerset area.",
+      "Tech Treatments is currently closed and not offering computer repairs, upgrades or home visits at this time. Thank you to everyone who has used the service.",
     images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };

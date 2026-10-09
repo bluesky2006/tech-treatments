@@ -4,13 +4,13 @@ import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Tech Treatments – friendly computer help in Frome and nearby villages.",
+  description: "Tech Treatments is currently closed and not offering computer help at this time.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: "Contact Tech Treatments",
-    description: "Contact Tech Treatments – friendly computer help in Frome and nearby villages.",
+    description: "Tech Treatments is currently closed and not offering computer help at this time.",
     url: "/contact",
     images: [
       {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact Tech Treatments",
-    description: "Contact Tech Treatments – friendly computer help in Frome and nearby villages.",
+    description: "Tech Treatments is currently closed and not offering computer help at this time.",
     images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
